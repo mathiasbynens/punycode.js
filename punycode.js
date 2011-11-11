@@ -196,7 +196,6 @@
 
 	/**
 	 * Converts a basic code point to lowercase is `flag` is falsy, or to
-	 * uppercase if `flag` is truthy. The code point is unchanged if it’s
 	 * caseless. The behavior is undefined if `codePoint` is not a basic code
 	 * point.
 	 * @private
@@ -218,7 +217,7 @@
 	 * @returns {String} The resulting string of Unicode code points.
 	 */
 	function decode(input, preserveCase) {
-		// Don’t use UTF-16
+		// Don't use UTF-16
 		var output = [],
 		    /**
 		     * The `caseFlags` array needs room for at least `output.length` values,
@@ -260,7 +259,7 @@
 			if (preserveCase) {
 				caseFlags[output.length] = input.charCodeAt(j) - 65 < 26;
 			}
-			// if it’s not a basic code point
+			// if it's not a basic code point
 			if (input.charCodeAt(j) >= 0x80) {
 				error('not-basic');
 			}
@@ -309,7 +308,7 @@
 			bias = adapt(i - oldi, out, oldi == 0);
 
 			// `i` was supposed to wrap around from `out` to `0`,
-			// incrementing `n` each time, so we’ll fix that now:
+			// incrementing `n` each time, so we'll fix that now:
 			if (floor(i / out) > maxInt - n) {
 				error('overflow');
 			}
@@ -419,7 +418,7 @@
 		// `handledCPCount` is the number of code points that have been handled;
 		// `basicLength` is the number of basic code points.
 
-		// Finish the basic string – if it is not empty – with a delimiter
+		// Finish the basic string - if it is not empty - with a delimiter
 		if (basicLength) {
 			output.push(delimiter);
 		}
@@ -437,7 +436,7 @@
 				}
 			}
 
-			// Increase `delta` enough to advance the decoder’s <n,i> state to <m,0>,
+			// Increase `delta` enough to advance the decoder's <n,i> state to <m,0>,
 			// but guard against overflow
 			handledCPCountPlusOne = handledCPCount + 1;
 			if (m - n > floor((maxInt - delta) / handledCPCountPlusOne)) {
@@ -485,8 +484,8 @@
 
 	/**
 	 * Converts a Unicode string representing a domain name to Punycode. Only the
-	 * non-ASCII parts of the domain name will be converted, i.e. it doesn’t
-	 * matter if you call it with a domain that’s already in ASCII.
+	 * non-ASCII parts of the domain name will be converted, i.e. it doesn't
+	 * matter if you call it with a domain that's already in ASCII.
 	 * @memberOf Punycode
 	 * @param {String} domain The domain name to convert, as a Unicode string.
 	 * @returns {String} The Punycode representation of the given domain name.
@@ -501,7 +500,7 @@
 
 	/**
 	 * Converts a Punycode string representing a domain name to Unicode. Only the
-	 * Punycoded parts of the domain name will be converted, i.e. it doesn’t
+	 * Punycoded parts of the domain name will be converted, i.e. it doesn't
 	 * matter if you call it on a string that has already been converted to
 	 * Unicode.
 	 * @memberOf Punycode
@@ -523,7 +522,7 @@
 	Punycode = {
 		'version': '0.0.1337',
 		/**
-		 * An object of methods to convert from JavaScript’s internal character
+		 * An object of methods to convert from JavaScript's internal character
 		 * representation to Unicode and back.
 		 * @static
 		 * @memberOf Punycode
