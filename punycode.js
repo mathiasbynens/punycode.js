@@ -196,6 +196,7 @@
 
 	/**
 	 * Converts a basic code point to lowercase is `flag` is falsy, or to
+	 * uppercase if `flag` is truthy. The code point is unchanged if it's
 	 * caseless. The behavior is undefined if `codePoint` is not a basic code
 	 * point.
 	 * @private
