@@ -20,13 +20,11 @@ In a browser:
 <script src="punycode.js"></script>
 ~~~
 
-<!--
 Via [npm](http://npmjs.org/) (only required for Node.js releases older than v0.6.2):
 
 ~~~bash
 npm install punycode
 ~~~
--->
 
 In [Node.js](http://nodejs.org/):
 
