@@ -85,20 +85,19 @@
 				'encoded': '989aomsvi5e83db1d2a355cv1e0vak1dwrv93d5xbh15a0dt30a5jpsd879ccm6fea98c'
 			},
 			/**
-			 * This test fails to encode correctly in every Punycode implementation
-			 * that I’ve tried.
-			 * According to the RFC sample strings, it should encode to:
-			 * `b1abfaaepdrnnbgefbadotcwatmq2g4l`
-			 * But instead it encodes to:
+			 * According to the RFC sample strings, this string should encode to:
 			 * `b1abfaaepdrnnbgefbaDotcwatmq2g4l`
-			 * (Note the capital D.)
-			 * I suspect this to be a typo in the RFC.
+			 * This test fails to encode as such in every Punycode implementation
+			 * that I’ve tried. Instead, it encodes to:
+			 * `b1abfaaepdrnnbgefbadotcwatmq2g4l`
+			 * I suspect this to be a typo in the RFC, and have tweaked the test for
+			 * now.
 			 * http://www.rfc-editor.org/errata_search.php?rfc=3492&eid=3026
 			 */
 			{
 				'description': 'Russian (Cyrillic)',
 				'decoded': '\u043f\u043e\u0447\u0435\u043c\u0443\u0436\u0435\u043e\u043d\u0438\u043d\u0435\u0433\u043e\u0432\u043e\u0440\u044f\u0442\u043f\u043e\u0440\u0443\u0441\u0441\u043a\u0438',
-				'encoded': 'b1abfaaepdrnnbgefbaDotcwatmq2g4l'
+				'encoded': 'b1abfaaepdrnnbgefbadotcwatmq2g4l'
 			},
 			{
 				'description': 'Spanish',
@@ -151,12 +150,16 @@
 		],
 		'utf16': [
 			{
+				'description': 'printable ASCII characters',
+				'decoded': [32, 33, 34, 35, 36, 37, 38, 96, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126],
+				'encoded': ' !"#$%&`()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~'
+			},
+			{
 				'description': 'Apple logo (private range)',
 				'decoded': [63743],
 				'encoded': '\uf8ff' // ''
 			},
 			{
-				'description': '',
 				'decoded': [102, 3232, 246, 32, 98, 97, 114, 32, 98, 229, 122, 32, 113, 252, 120],
 				'encoded': 'f\u0ca0\xf6 bar b\xe5\x7a q\xfcx' // 'fಠö bar båz qüx'
 			}
@@ -230,11 +233,27 @@
 		each(testData.domains, function(object) {
 			equal(Punycode.toUnicode(object.encoded), object.decoded, object.description);
 		});
+		/**
+		 * Domain names (or other strings) that don’t start with `xn--` may not be
+		 * converted.
+		 */
+		each(testData.strings, function(object) {
+			var message = 'Domain names (or other strings) that don’t start with `xn--` may not be converted';
+			equal(Punycode.toUnicode(object.encoded), object.encoded, message);
+			equal(Punycode.toUnicode(object.decoded), object.decoded, message);
+		});
 	});
 
 	test('Punycode.toASCII', function() {
 		each(testData.domains, function(object) {
 			equal(Punycode.toASCII(object.decoded), object.encoded, object.description);
+		});
+		/**
+		 * Domain names (or other strings) that are already in ASCII may not be
+		 * converted.
+		 */
+		each(testData.strings, function(object) {
+			equal(Punycode.toASCII(object.encoded), object.encoded, 'Domain names (or other strings) that are already in ASCII may not be converted');
 		});
 	});
 

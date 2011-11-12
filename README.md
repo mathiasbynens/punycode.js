@@ -7,8 +7,10 @@ This JavaScript library is the result of comparing, optimizing and documenting d
 * [The C example code from RFC 3492](http://tools.ietf.org/html/rfc3492#appendix-C)
 * [`punycode.c` by _Markus W. Scherer_ (IBM)](http://opensource.apple.com/source/ICU/ICU-400.42/icuSources/common/punycode.c)
 * [`punycode.c` by _Ben Noordhuis_](https://github.com/bnoordhuis/punycode/blob/master/punycode.c)
-* [`punycode.js` by _Ben Noordhuis_](https://github.com/joyent/node/blob/426298c8c1c0d5b5224ac3658c41e7c2a3fe9377/lib/punycode.js) (note: [not fully compliant](https://github.com/joyent/node/issues/2072))
 * [JavaScript implementation by _some_](http://stackoverflow.com/questions/183485/can-anyone-recommend-a-good-free-javascript-for-punycode-to-unicode-conversion/301287#301287)
+* [`punycode.js` by _Ben Noordhuis_](https://github.com/joyent/node/blob/426298c8c1c0d5b5224ac3658c41e7c2a3fe9377/lib/punycode.js) (note: [not fully compliant](https://github.com/joyent/node/issues/2072))
+
+This project [is bundled with Node.js v0.6.2](https://github.com/joyent/node/blob/master/lib/punycode.js).
 
 ## Installation and usage
 
@@ -19,7 +21,7 @@ In a browser:
 ~~~
 
 <!--
-Via [npm](http://npmjs.org/):
+Via [npm](http://npmjs.org/) (only required for Node.js releases older than v0.6.2):
 
 ~~~bash
 npm install punycode
@@ -69,6 +71,8 @@ Punycode.encode('☃-⌘'); // '--dqo34k'
 Punycode.decode('--dqo34k'); // '☃-⌘'
 ~~~
 
+[Full API documentation is available.](https://github.com/bestiejs/punycode.js/tree/master/docs#readme)
+
 ## Cloning this repo
 
 To clone this repository including all submodules, using Git 1.6.5 or later:
@@ -91,9 +95,9 @@ Feel free to fork if you see possible improvements!
 ## Authors
 
 * [Mathias Bynens](http://mathiasbynens.be/)
-  [![twitter/mathias](http://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](https://twitter.com/mathias "Follow @mathias on Twitter")
+  [![twitter/mathias](http://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](http://twitter.com/mathias "Follow @mathias on Twitter")
 
 ## Contributors
 
 * [John-David Dalton](http://allyoucanleet.com/)
-  [![twitter/jdalton](http://gravatar.com/avatar/299a3d891ff1920b69c364d061007043?s=70)](https://twitter.com/jdalton "Follow @jdalton on Twitter")
+  [![twitter/jdalton](http://gravatar.com/avatar/299a3d891ff1920b69c364d061007043?s=70)](http://twitter.com/jdalton "Follow @jdalton on Twitter")
