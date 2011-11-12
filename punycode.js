@@ -87,7 +87,7 @@
 	 */
 	function mapDomain(string, fn) {
 		var glue = '.';
-		return map(string.toLowerCase().split(glue), fn).join(glue);
+		return map(string.split(glue), fn).join(glue);
 	}
 
 	/**
@@ -493,7 +493,7 @@
 	 */
 	function toASCII(domain) {
 		return mapDomain(domain, function(string) {
-			return string.match(/[^a-zA-Z0-9-]/)
+			return /[^\x20-\x7e]/.test(string)
 				? 'xn--' + encode(string)
 				: string;
 		});
@@ -511,8 +511,8 @@
 	 */
 	function toUnicode(domain) {
 		return mapDomain(domain, function(string) {
-			return string.match(/^xn--/)
-				? decode(string.slice(4))
+			return /^xn--/.test(string)
+				? decode(string.slice(4).toLowerCase())
 				: string;
 		});
 	}
@@ -521,7 +521,7 @@
 
 	/** Define the public API */
 	Punycode = {
-		'version': '0.0.1337',
+		'version': '0.1.0',
 		/**
 		 * An object of methods to convert from JavaScript's internal character
 		 * representation to Unicode and back.
