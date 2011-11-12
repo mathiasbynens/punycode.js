@@ -484,22 +484,6 @@
 	}
 
 	/**
-	 * Converts a Unicode string representing a domain name to Punycode. Only the
-	 * non-ASCII parts of the domain name will be converted, i.e. it doesn't
-	 * matter if you call it with a domain that's already in ASCII.
-	 * @memberOf Punycode
-	 * @param {String} domain The domain name to convert, as a Unicode string.
-	 * @returns {String} The Punycode representation of the given domain name.
-	 */
-	function toASCII(domain) {
-		return mapDomain(domain, function(string) {
-			return /[^\x20-\x7e]/.test(string)
-				? 'xn--' + encode(string)
-				: string;
-		});
-	}
-
-	/**
 	 * Converts a Punycode string representing a domain name to Unicode. Only the
 	 * Punycoded parts of the domain name will be converted, i.e. it doesn't
 	 * matter if you call it on a string that has already been converted to
@@ -513,6 +497,22 @@
 		return mapDomain(domain, function(string) {
 			return /^xn--/.test(string)
 				? decode(string.slice(4).toLowerCase())
+				: string;
+		});
+	}
+
+	/**
+	 * Converts a Unicode string representing a domain name to Punycode. Only the
+	 * non-ASCII parts of the domain name will be converted, i.e. it doesn't
+	 * matter if you call it with a domain that's already in ASCII.
+	 * @memberOf Punycode
+	 * @param {String} domain The domain name to convert, as a Unicode string.
+	 * @returns {String} The Punycode representation of the given domain name.
+	 */
+	function toASCII(domain) {
+		return mapDomain(domain, function(string) {
+			return /[^\x20-\x7e]/.test(string)
+				? 'xn--' + encode(string)
 				: string;
 		});
 	}

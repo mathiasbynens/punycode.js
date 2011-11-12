@@ -61,7 +61,7 @@
 			},
 			{
 				'description': 'Czech',
-				'decoded': '\u0050\u0072\u006f\u010d\u0070\u0072\u006f\u0073\u0074\u011b\u006e\u0065\u006d\u006c\u0075\u0076\u00ed\u010d\u0065\u0073\u006b\u0079',
+				'decoded': 'Pro\u010dprost\u011bnemluv\xed\u010desky',
 				'encoded': 'Proprostnemluvesky-uyb24dma41a'
 			},
 			{
@@ -101,36 +101,36 @@
 			},
 			{
 				'description': 'Spanish',
-				'decoded': '\u0050\u006f\u0072\u0071\u0075\u00e9\u006e\u006f\u0070\u0075\u0065\u0064\u0065\u006e\u0073\u0069\u006d\u0070\u006c\u0065\u006d\u0065\u006e\u0074\u0065\u0068\u0061\u0062\u006c\u0061\u0072\u0065\u006e\u0045\u0073\u0070\u0061\u00f1\u006f\u006c',
+				'decoded': 'Porqu\xe9nopuedensimplementehablarenEspa\xf1ol',
 				'encoded': 'PorqunopuedensimplementehablarenEspaol-fmd56a'
 			},
 			{
 				'description': 'Vietnamese',
-				'decoded': '\u0054\u1ea1\u0069\u0073\u0061\u006f\u0068\u1ecd\u006b\u0068\u00f4\u006e\u0067\u0074\u0068\u1ec3\u0063\u0068\u1ec9\u006e\u00f3\u0069\u0074\u0069\u1ebf\u006e\u0067\u0056\u0069\u1ec7\u0074',
+				'decoded': 'T\u1ea1isaoh\u1ecdkh\xf4ngth\u1ec3ch\u1ec9n\xf3iti\u1ebfngVi\u1ec7t',
 				'encoded': 'TisaohkhngthchnitingVit-kjcr8268qyxafd2f1b9g'
 			},
 			{
-				'decoded': '\u0033\u5e74\u0042\u7d44\u91d1\u516b\u5148\u751f',
+				'decoded': '3\u5e74B\u7d44\u91d1\u516b\u5148\u751f',
 				'encoded': '3B-ww4c5e180e575a65lsy2b'
 			},
 			{
-				'decoded': '\u5b89\u5ba4\u5948\u7f8e\u6075\u002d\u0077\u0069\u0074\u0068\u002d\u0053\u0055\u0050\u0045\u0052\u002d\u004d\u004f\u004e\u004b\u0045\u0059\u0053',
+				'decoded': '\u5b89\u5ba4\u5948\u7f8e\u6075-with-SUPER-MONKEYS',
 				'encoded': '-with-SUPER-MONKEYS-pc58ag80a8qai00g7n9n'
 			},
 			{
-				'decoded': '\u0048\u0065\u006c\u006c\u006f\u002d\u0041\u006e\u006f\u0074\u0068\u0065\u0072\u002d\u0057\u0061\u0079\u002d\u305d\u308c\u305e\u308c\u306e\u5834\u6240',
+				'decoded': 'Hello-Another-Way-\u305d\u308c\u305e\u308c\u306e\u5834\u6240',
 				'encoded': 'Hello-Another-Way--fc4qua05auwb3674vfr0b'
 			},
 			{
-				'decoded': '\u3072\u3068\u3064\u5c4b\u6839\u306e\u4e0b\u0032',
+				'decoded': '\u3072\u3068\u3064\u5c4b\u6839\u306e\u4e0b2',
 				'encoded': '2-u9tlzr9756bt3uc0v'
 			},
 			{
-				'decoded': '\u004d\u0061\u006a\u0069\u3067\u004b\u006f\u0069\u3059\u308b\u0035\u79d2\u524d',
+				'decoded': 'Maji\u3067Koi\u3059\u308b5\u79d2\u524d',
 				'encoded': 'MajiKoi5-783gue6qz075azm5e'
 			},
 			{
-				'decoded': '\u30d1\u30d5\u30a3\u30fc\u0064\u0065\u30eb\u30f3\u30d0',
+				'decoded': '\u30d1\u30d5\u30a3\u30fcde\u30eb\u30f3\u30d0',
 				'encoded': 'de-jg4avhby1noc0d'
 			},
 			{
