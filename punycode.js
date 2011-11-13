@@ -271,8 +271,8 @@
 			output.push(input.charCodeAt(j));
 		}
 
-		// Main decoding loop: start just after the last delimiter if any basic
-		// code points were copied; start at the beginning otherwise.
+		// Main decoding loop: start just after the last delimiter if any basic code
+		// points were copied; start at the beginning otherwise.
 
 		for (index = basic > 0 ? basic + 1 : 0; index < inputLength; /* no final expression */) {
 
@@ -433,7 +433,6 @@
 
 			// All non-basic code points < n have been handled already. Find the next
 			// larger one:
-
 			for (m = maxInt, j = 0; j < inputLength; ++j) {
 				currentValue = input[j];
 				if (currentValue >= n && currentValue < m) {
