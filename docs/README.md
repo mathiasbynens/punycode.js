@@ -46,7 +46,7 @@
 
 <!-- div -->
 
-### <a id="Punycode.decode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L220" title="View in source">`Punycode.decode(input, preserveCase)`</a>
+### <a id="Punycode.decode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L224" title="View in source">`Punycode.decode(input, preserveCase)`</a>
 Converts a Punycode string of ASCII code points to a string of Unicode code points.
 [&#9650;][1]
 
@@ -62,7 +62,7 @@ Converts a Punycode string of ASCII code points to a string of Unicode code poin
 
 <!-- div -->
 
-### <a id="Punycode.encode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L350" title="View in source">`Punycode.encode(input, preserveCase)`</a>
+### <a id="Punycode.encode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L354" title="View in source">`Punycode.encode(input, preserveCase)`</a>
 Converts a string of Unicode code points to a Punycode string of ASCII code points.
 [&#9650;][1]
 
@@ -78,8 +78,8 @@ Converts a string of Unicode code points to a Punycode string of ASCII code poin
 
 <!-- div -->
 
-### <a id="Punycode.toASCII" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L494" title="View in source">`Punycode.toASCII(domain)`</a>
-Converts a Unicode string representing a domain name to Punycode. Only the non-ASCII parts of the domain name will be converted, i.e. it doesn’t matter if you call it with a domain that’s already in ASCII.
+### <a id="Punycode.toASCII" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L516" title="View in source">`Punycode.toASCII(domain)`</a>
+Converts a Unicode string representing a domain name to Punycode. Only the non-ASCII parts of the domain name will be converted, i.e. it doesn't matter if you call it with a domain that's already in ASCII.
 [&#9650;][1]
 
 #### Arguments
@@ -93,8 +93,8 @@ Converts a Unicode string representing a domain name to Punycode. Only the non-A
 
 <!-- div -->
 
-### <a id="Punycode.toUnicode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L512" title="View in source">`Punycode.toUnicode(domain)`</a>
-Converts a Punycode string representing a domain name to Unicode. Only the Punycoded parts of the domain name will be converted, i.e. it doesn’t matter if you call it on a string that has already been converted to Unicode.
+### <a id="Punycode.toUnicode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L500" title="View in source">`Punycode.toUnicode(domain)`</a>
+Converts a Punycode string representing a domain name to Unicode. Only the Punycoded parts of the domain name will be converted, i.e. it doesn't matter if you call it on a string that has already been converted to Unicode.
 [&#9650;][1]
 
 #### Arguments
@@ -115,8 +115,8 @@ Converts a Punycode string representing a domain name to Unicode. Only the Punyc
 
 <!-- div -->
 
-### <a id="Punycode.utf16" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L532" title="View in source">`utf16`</a>
-*(Object)*: An object of methods to convert from JavaScript’s internal character representation to Unicode and back.
+### <a id="Punycode.utf16" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L535" title="View in source">`utf16`</a>
+*(Object)*: An object of methods to convert from JavaScript's internal character representation to Unicode and back.
 [&#9650;][1]
 
 <!-- /div -->
@@ -124,7 +124,7 @@ Converts a Punycode string representing a domain name to Unicode. Only the Punyc
 
 <!-- div -->
 
-### <a id="Punycode.utf16.decode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L102" title="View in source">`Punycode.utf16.decode(string)`</a>
+### <a id="Punycode.utf16.decode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L106" title="View in source">`Punycode.utf16.decode(string)`</a>
 Creates an array containing the decimal code points of each character in the string.
 [&#9650;][1]
 
@@ -139,7 +139,7 @@ Creates an array containing the decimal code points of each character in the str
 
 <!-- div -->
 
-### <a id="Punycode.utf16.encode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L130" title="View in source">`Punycode.utf16.encode(codePoints)`</a>
+### <a id="Punycode.utf16.encode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L134" title="View in source">`Punycode.utf16.encode(codePoints)`</a>
 Creates a string based on an array of decimal code points.
 [&#9650;][1]
 
