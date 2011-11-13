@@ -525,7 +525,7 @@
 
 	/** Define the public API */
 	Punycode = {
-		'version': '0.1.0',
+		'version': '0.1.1',
 		/**
 		 * An object of methods to convert from JavaScript's internal character
 		 * representation to Unicode and back.
