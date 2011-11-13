@@ -34,6 +34,10 @@
 	initialN = 128, // 0x80
 	delimiter = '-', // '\x2D'
 
+	/** Regular expressions */
+	regexASCII = /[^\x20-\x7e]/,
+	regexPunycode = /^xn--/,
+
 	/** Error messages */
 	errors = {
 		'overflow': 'Overflow: input needs wider integers to process.',
@@ -495,7 +499,7 @@
 	 */
 	function toUnicode(domain) {
 		return mapDomain(domain, function(string) {
-			return /^xn--/.test(string)
+			return regexPunycode.test(string)
 				? decode(string.slice(4).toLowerCase())
 				: string;
 		});
@@ -511,7 +515,7 @@
 	 */
 	function toASCII(domain) {
 		return mapDomain(domain, function(string) {
-			return /[^\x20-\x7e]/.test(string)
+			return regexASCII.test(string)
 				? 'xn--' + encode(string)
 				: string;
 		});
@@ -525,7 +529,6 @@
 		/**
 		 * An object of methods to convert from JavaScript's internal character
 		 * representation to Unicode and back.
-		 * @static
 		 * @memberOf Punycode
 		 * @type Object
 		 */
