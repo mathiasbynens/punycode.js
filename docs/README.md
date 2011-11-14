@@ -46,13 +46,12 @@
 
 <!-- div -->
 
-### <a id="Punycode.decode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L224" title="View in source">`Punycode.decode(input, preserveCase)`</a>
+### <a id="Punycode.decode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L222" title="View in source">`Punycode.decode(input)`</a>
 Converts a Punycode string of ASCII code points to a string of Unicode code points.
 [&#9650;][1]
 
 #### Arguments
 1. `input` *(String)*: The Punycode string of ASCII code points.
-2. `preserveCase` *(Boolean)*: A boolean value indicating if character case should be preserved or not.
 
 #### Returns
 *(String)*: The resulting string of Unicode code points.
@@ -62,13 +61,12 @@ Converts a Punycode string of ASCII code points to a string of Unicode code poin
 
 <!-- div -->
 
-### <a id="Punycode.encode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L354" title="View in source">`Punycode.encode(input, preserveCase)`</a>
+### <a id="Punycode.encode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L324" title="View in source">`Punycode.encode(input)`</a>
 Converts a string of Unicode code points to a Punycode string of ASCII code points.
 [&#9650;][1]
 
 #### Arguments
 1. `input` *(String)*: The string of Unicode code points.
-2. `preserveCase` *(Boolean)*: A boolean value indicating if character case should be preserved or not.
 
 #### Returns
 *(String)*: The resulting Punycode string of ASCII code points.
@@ -78,7 +76,7 @@ Converts a string of Unicode code points to a Punycode string of ASCII code poin
 
 <!-- div -->
 
-### <a id="Punycode.toASCII" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L515" title="View in source">`Punycode.toASCII(domain)`</a>
+### <a id="Punycode.toASCII" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L457" title="View in source">`Punycode.toASCII(domain)`</a>
 Converts a Unicode string representing a domain name to Punycode. Only the non-ASCII parts of the domain name will be converted, i.e. it doesn't matter if you call it with a domain that's already in ASCII.
 [&#9650;][1]
 
@@ -93,7 +91,7 @@ Converts a Unicode string representing a domain name to Punycode. Only the non-A
 
 <!-- div -->
 
-### <a id="Punycode.toUnicode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L499" title="View in source">`Punycode.toUnicode(domain)`</a>
+### <a id="Punycode.toUnicode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L441" title="View in source">`Punycode.toUnicode(domain)`</a>
 Converts a Punycode string representing a domain name to Unicode. Only the Punycoded parts of the domain name will be converted, i.e. it doesn't matter if you call it on a string that has already been converted to Unicode.
 [&#9650;][1]
 
@@ -115,7 +113,7 @@ Converts a Punycode string representing a domain name to Unicode. Only the Punyc
 
 <!-- div -->
 
-### <a id="Punycode.utf16" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L534" title="View in source">`utf16`</a>
+### <a id="Punycode.utf16" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L476" title="View in source">`utf16`</a>
 *(Object)*: An object of methods to convert from JavaScript's internal character representation to Unicode and back.
 [&#9650;][1]
 
