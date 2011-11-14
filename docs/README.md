@@ -7,6 +7,7 @@
 
 ## `Punycode`
 * [`Punycode`](#Punycode)
+* [`Punycode.version`](#Punycode.version)
 * [`Punycode.decode`](#Punycode.decode)
 * [`Punycode.encode`](#Punycode.encode)
 * [`Punycode.toASCII`](#Punycode.toASCII)
@@ -39,6 +40,15 @@
 
 ### <a id="Punycode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L14" title="View in source">`Punycode`</a>
 *(Object)*: The `Punycode` object.
+[&#9650;][1]
+
+<!-- /div -->
+
+
+<!-- div -->
+
+### <a id="Punycode.version" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L474" title="View in source">`Punycode.version`</a>
+*(String)*: A string representing the current Punycode.js version number.
 [&#9650;][1]
 
 <!-- /div -->
@@ -113,7 +123,7 @@ Converts a Punycode string representing a domain name to Unicode. Only the Punyc
 
 <!-- div -->
 
-### <a id="Punycode.utf16" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L476" title="View in source">`utf16`</a>
+### <a id="Punycode.utf16" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L481" title="View in source">`utf16`</a>
 *(Object)*: An object of methods to convert from JavaScript's internal character representation to Unicode and back.
 [&#9650;][1]
 
