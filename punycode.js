@@ -466,7 +466,12 @@
 
 	/** Define the public API */
 	Punycode = {
-		'version': '0.1.1',
+		/**
+		 * A string representing the current Punycode.js version number.
+		 * @memberOf Punycode
+		 * @type String
+		 */
+		'version': '0.1.2',
 		/**
 		 * An object of methods to convert from JavaScript's internal character
 		 * representation to Unicode and back.
