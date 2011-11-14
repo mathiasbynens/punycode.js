@@ -119,11 +119,11 @@ Converts a Punycode string representing a domain name to Unicode. Only the Punyc
 
 <!-- div -->
 
-## `utf16`
+## `Punycode.utf16`
 
 <!-- div -->
 
-### <a id="Punycode.utf16" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L481" title="View in source">`utf16`</a>
+### <a id="Punycode.utf16" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L481" title="View in source">`Punycode.utf16`</a>
 *(Object)*: An object of methods to convert from JavaScript's internal character representation to Unicode and back.
 [&#9650;][1]
 
