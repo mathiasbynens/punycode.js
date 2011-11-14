@@ -217,23 +217,11 @@
 	 * code points.
 	 * @memberOf Punycode
 	 * @param {String} input The Punycode string of ASCII code points.
-	 * @param {Boolean} preserveCase A boolean value indicating if character
-	 * case should be preserved or not.
 	 * @returns {String} The resulting string of Unicode code points.
 	 */
-	function decode(input, preserveCase) {
+	function decode(input) {
 		// Don't use UTF-16
 		var output = [],
-		    /**
-		     * The `caseFlags` array needs room for at least `output.length` values,
-		     * or it can be `undefined` if the case information is not needed. A
-		     * truthy value suggests that the corresponding Unicode character be
-		     * forced to uppercase (if possible), while falsy values suggest that it
-		     * be forced to lowercase (if possible). ASCII code points are output
-		     * already in the proper case, but their flags will be set appropriately
-		     * so that applying the flags would be harmless.
-		     */
-		    caseFlags = [],
 		    inputLength = input.length,
 		    out,
 		    i = 0,
@@ -261,9 +249,6 @@
 		}
 
 		for (j = 0; j < basic; ++j) {
-			if (preserveCase) {
-				caseFlags[output.length] = input.charCodeAt(j) - 65 < 26;
-			}
 			// if it's not a basic code point
 			if (input.charCodeAt(j) >= 0x80) {
 				error('not-basic');
@@ -322,23 +307,10 @@
 			i %= out;
 
 			// Insert `n` at position `i` of the output
-			// The case of the last character determines `uppercase` flag
-			if (preserveCase) {
-				caseFlags.splice(i, 0, input.charCodeAt(index - 1) - 65 < 26);
-			}
-
-			output.splice(i, 0, n);
-			i++;
+			output.splice(i++, 0, n);
 
 		}
 
-		if (preserveCase) {
-			for (i = 0, length = output.length; i < length; i++) {
-				if (caseFlags[i]) {
-					output[i] = (stringFromCharCode(output[i]).toUpperCase()).charCodeAt(0);
-				}
-			}
-		}
 		return utf16encode(output);
 	}
 
@@ -347,11 +319,9 @@
 	 * code points.
 	 * @memberOf Punycode
 	 * @param {String} input The string of Unicode code points.
-	 * @param {Boolean} preserveCase A boolean value indicating if character
-	 * case should be preserved or not.
 	 * @returns {String} The resulting Punycode string of ASCII code points.
 	 */
-	function encode(input, preserveCase) {
+	function encode(input) {
 		var n,
 		    delta,
 		    handledCPCount,
@@ -363,18 +333,6 @@
 		    k,
 		    t,
 		    currentValue,
-		    /**
-		     * The `caseFlags` array will hold `inputLength` boolean values, where
-		     * `true` suggests that the corresponding Unicode character be forced
-		     * to uppercase after being decoded (if possible), and `false`
-		     * suggests that it be forced to lowercase (if possible). ASCII code
-		     * points are encoded literally, except that ASCII letters are forced
-		     * to uppercase or lowercase according to the corresponding uppercase
-		     * flags. If `caseFlags` remains `undefined` then ASCII letters are
-		     * left as they are, and other code points are treated as if their
-		     * uppercase flags were `true`.
-		     */
-		    caseFlags,
 		    output = [],
 		    /** `inputLength` will hold the number of code points in `input`. */
 		    inputLength,
@@ -383,23 +341,11 @@
 		    baseMinusT,
 		    qMinusT;
 
-		if (preserveCase) {
-			// Preserve case, step 1 of 2: get a list of the unaltered string
-			caseFlags = utf16decode(input);
-		}
-
 		// Convert the input in UTF-16 to Unicode
 		input = utf16decode(input);
 
 		// Cache the length
 		inputLength = input.length;
-
-		if (preserveCase) {
-			// Preserve case, step 2 of 2: modify the list to true/false
-			for (j = 0; j < inputLength; j++) {
-				caseFlags[j] = input[j] != caseFlags[j];
-			}
-		}
 
 		// Initialize the state
 		n = initialN;
@@ -410,11 +356,7 @@
 		for (j = 0; j < inputLength; ++j) {
 			currentValue = input[j];
 			if (currentValue < 0x80) {
-				output.push(
-					stringFromCharCode(
-						caseFlags ? encodeBasic(currentValue, caseFlags[j]) : currentValue
-					)
-				);
+				output.push(stringFromCharCode(currentValue));
 			}
 		}
 
@@ -472,7 +414,7 @@
 						q = floor(qMinusT / baseMinusT);
 					}
 
-					output.push(stringFromCharCode(digitToBasic(q, preserveCase && caseFlags[j] ? 1 : 0)));
+					output.push(stringFromCharCode(digitToBasic(q, 0)));
 					bias = adapt(delta, handledCPCountPlusOne, handledCPCount == basicLength);
 					delta = 0;
 					++handledCPCount;
