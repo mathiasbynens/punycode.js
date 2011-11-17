@@ -29,7 +29,7 @@ npm install punycode
 In [Narwhal](http://narwhaljs.org/), [Node.js](http://nodejs.org/), and [RingoJS](http://ringojs.org/):
 
 ~~~js
-var Punycode = require('punycode');
+var punycode = require('punycode');
 ~~~
 
 In [Rhino](http://www.mozilla.org/rhino/):
@@ -48,8 +48,8 @@ require(
     }
   },
   ['punycode'],
-  function(Punycode) {
-    console.log(Punycode);
+  function(punycode) {
+    console.log(punycode);
   }
 );
 ~~~
@@ -59,16 +59,16 @@ Usage example:
 ~~~js
 
 // encode/decode domain names
-Punycode.toASCII('mañana.com'); // 'xn--maana-pta.com'
-Punycode.toUnicode('xn--maana-pta.com'); // 'mañana.com'
-Punycode.toASCII('☃-⌘.com'); // 'xn----dqo34k.com'
-Punycode.toUnicode('xn----dqo34k.com'); // '☃-⌘.com'
+punycode.toASCII('mañana.com'); // 'xn--maana-pta.com'
+punycode.toUnicode('xn--maana-pta.com'); // 'mañana.com'
+punycode.toASCII('☃-⌘.com'); // 'xn----dqo34k.com'
+punycode.toUnicode('xn----dqo34k.com'); // '☃-⌘.com'
 
 // encode/decode domain name parts
-Punycode.encode('mañana'); // 'maana-pta'
-Punycode.decode('maana-pta'); // 'mañana'
-Punycode.encode('☃-⌘'); // '--dqo34k'
-Punycode.decode('--dqo34k'); // '☃-⌘'
+punycode.encode('mañana'); // 'maana-pta'
+punycode.decode('maana-pta'); // 'mañana'
+punycode.encode('☃-⌘'); // '--dqo34k'
+punycode.decode('--dqo34k'); // '☃-⌘'
 ~~~
 
 [Full API documentation is available.](https://github.com/bestiejs/punycode.js/tree/master/docs#readme)

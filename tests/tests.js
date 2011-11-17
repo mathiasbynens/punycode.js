@@ -9,8 +9,8 @@
 		(root.QUnit = load('../vendor/qunit/qunit/qunit.js') || root.QUnit) &&
 		(load('../vendor/qunit-clib/qunit-clib.js'), root.QUnit),
 
-	/** The `Punycode` object to test */
-	Punycode = root.Punycode || (load('../punycode.js') || root.Punycode),
+	/** The `punycode` object to test */
+	punycode = root.punycode || (load('../punycode.js') || root.punycode),
 
 	/** Data that will be used in the tests */
 	testData = {
@@ -202,33 +202,33 @@
 
 	/*--------------------------------------------------------------------------*/
 
-	test('Punycode.utf16.decode', function() {
+	test('punycode.utf16.decode', function() {
 		each(testData.utf16, function(object) {
-			deepEqual(Punycode.utf16.decode(object.encoded), object.decoded, object.description);
+			deepEqual(punycode.utf16.decode(object.encoded), object.decoded, object.description);
 		});
 	});
 
-	test('Punycode.utf16.encode', function() {
+	test('punycode.utf16.encode', function() {
 		each(testData.utf16, function(object) {
-			equal(Punycode.utf16.encode(object.decoded), object.encoded, object.description);
+			equal(punycode.utf16.encode(object.decoded), object.encoded, object.description);
 		});
 	});
 
-	test('Punycode.decode', function() {
+	test('punycode.decode', function() {
 		each(testData.strings, function(object) {
-			equal(Punycode.decode(object.encoded), object.decoded, object.description);
+			equal(punycode.decode(object.encoded), object.decoded, object.description);
 		});
 	});
 
-	test('Punycode.encode', function() {
+	test('punycode.encode', function() {
 		each(testData.strings, function(object) {
-			equal(Punycode.encode(object.decoded), object.encoded, object.description);
+			equal(punycode.encode(object.decoded), object.encoded, object.description);
 		});
 	});
 
-	test('Punycode.toUnicode', function() {
+	test('punycode.toUnicode', function() {
 		each(testData.domains, function(object) {
-			equal(Punycode.toUnicode(object.encoded), object.decoded, object.description);
+			equal(punycode.toUnicode(object.encoded), object.decoded, object.description);
 		});
 		/**
 		 * Domain names (or other strings) that don’t start with `xn--` may not be
@@ -236,27 +236,27 @@
 		 */
 		each(testData.strings, function(object) {
 			var message = 'Domain names (or other strings) that don’t start with `xn--` may not be converted';
-			equal(Punycode.toUnicode(object.encoded), object.encoded, message);
-			equal(Punycode.toUnicode(object.decoded), object.decoded, message);
+			equal(punycode.toUnicode(object.encoded), object.encoded, message);
+			equal(punycode.toUnicode(object.decoded), object.decoded, message);
 		});
 	});
 
-	test('Punycode.toASCII', function() {
+	test('punycode.toASCII', function() {
 		each(testData.domains, function(object) {
-			equal(Punycode.toASCII(object.decoded), object.encoded, object.description);
+			equal(punycode.toASCII(object.decoded), object.encoded, object.description);
 		});
 		/**
 		 * Domain names (or other strings) that are already in ASCII may not be
 		 * converted.
 		 */
 		each(testData.strings, function(object) {
-			equal(Punycode.toASCII(object.encoded), object.encoded, 'Domain names (or other strings) that are already in ASCII may not be converted');
+			equal(punycode.toASCII(object.encoded), object.encoded, 'Domain names (or other strings) that are already in ASCII may not be converted');
 		});
 	});
 
 	if (root.document && root.require) {
 		test('require(\'punycode\')', function() {
-			equal((Punycode2 || {}).version, Punycode.version, 'require(\'punycode\')');
+			equal((punycode2 || {}).version, punycode.version, 'require(\'punycode\')');
 		});
 	}
 

@@ -15,7 +15,7 @@
 		<script src="../punycode.js"></script>
 		<script src="../vendor/requirejs/require.js"></script>
 		<script>
-			var Punycode2;
+			var punycode2;
 			if (/[?&]norequire=true(?:&|$)/.test(location.search)) {
 				require = define = null;
 				document.write('<script src="tests.js"><\/script>');
@@ -27,8 +27,8 @@
 						'punycode': '../../punycode'
 					}
 				},
-				['punycode'], function(Punycode) {
-					Punycode2 = Punycode;
+				['punycode'], function(punycode) {
+					punycode2 = punycode;
 					require(['tests.js']);
 				});
 			}

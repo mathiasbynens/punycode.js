@@ -7,11 +7,11 @@
 ;(function(root) {
 
 	/**
-	 * The `Punycode` object.
-	 * @name Punycode
+	 * The `punycode` object.
+	 * @name punycode
 	 * @type Object
 	 */
-	var Punycode,
+	var punycode,
 
 	/** Detect free variables `define`, `exports`, `module` and `require` */
 	freeDefine = typeof define == 'function' && typeof define.amd == 'object' &&
@@ -99,8 +99,8 @@
 	/**
 	 * Creates an array containing the decimal code points of each character in
 	 * the string.
-	 * @see `Punycode.utf16.encode`
-	 * @memberOf Punycode.utf16
+	 * @see `punycode.utf16.encode`
+	 * @memberOf punycode.utf16
 	 * @name decode
 	 * @param {String} string The Unicode input string.
 	 * @returns {Array} The new array.
@@ -127,8 +127,8 @@
 
 	/**
 	 * Creates a string based on an array of decimal code points.
-	 * @see `Punycode.utf16.decode`
-	 * @memberOf Punycode.utf16
+	 * @see `punycode.utf16.decode`
+	 * @memberOf punycode.utf16
 	 * @name encode
 	 * @param {Array} codePoints The array of decimal code points.
 	 * @returns {String} The new string.
@@ -217,7 +217,7 @@
 	/**
 	 * Converts a Punycode string of ASCII code points to a string of Unicode
 	 * code points.
-	 * @memberOf Punycode
+	 * @memberOf punycode
 	 * @param {String} input The Punycode string of ASCII code points.
 	 * @returns {String} The resulting string of Unicode code points.
 	 */
@@ -319,7 +319,7 @@
 	/**
 	 * Converts a string of Unicode code points to a Punycode string of ASCII
 	 * code points.
-	 * @memberOf Punycode
+	 * @memberOf punycode
 	 * @param {String} input The string of Unicode code points.
 	 * @returns {String} The resulting Punycode string of ASCII code points.
 	 */
@@ -435,7 +435,7 @@
 	 * Punycoded parts of the domain name will be converted, i.e. it doesn't
 	 * matter if you call it on a string that has already been converted to
 	 * Unicode.
-	 * @memberOf Punycode
+	 * @memberOf punycode
 	 * @param {String} domain The Punycode domain name to convert to Unicode.
 	 * @returns {String} The Unicode representation of the given Punycode
 	 * string.
@@ -452,7 +452,7 @@
 	 * Converts a Unicode string representing a domain name to Punycode. Only the
 	 * non-ASCII parts of the domain name will be converted, i.e. it doesn't
 	 * matter if you call it with a domain that's already in ASCII.
-	 * @memberOf Punycode
+	 * @memberOf punycode
 	 * @param {String} domain The domain name to convert, as a Unicode string.
 	 * @returns {String} The Punycode representation of the given domain name.
 	 */
@@ -467,17 +467,17 @@
 	/*--------------------------------------------------------------------------*/
 
 	/** Define the public API */
-	Punycode = {
+	punycode = {
 		/**
 		 * A string representing the current Punycode.js version number.
-		 * @memberOf Punycode
+		 * @memberOf punycode
 		 * @type String
 		 */
 		'version': '0.1.2',
 		/**
 		 * An object of methods to convert from JavaScript's internal character
 		 * representation to Unicode and back.
-		 * @memberOf Punycode
+		 * @memberOf punycode
 		 * @type Object
 		 */
 		'utf16': {
@@ -490,23 +490,23 @@
 		'toUnicode': toUnicode
 	};
 
-	/** Expose Punycode */
+	/** Expose `punycode` */
 	if (freeExports) {
 		if (freeModule && freeModule.exports == freeExports) {
 			// in Node.js or Ringo 0.8+
-			freeModule.exports = Punycode;
+			freeModule.exports = punycode;
 		} else {
 			// in Narwhal or Ringo 0.7-
-			for (key in Punycode) {
-				Punycode.hasOwnProperty(key) && (freeExports[key] = Punycode[key]);
+			for (key in punycode) {
+				punycode.hasOwnProperty(key) && (freeExports[key] = punycode[key]);
 			}
 		}
 	} else if (freeDefine) {
 		// via curl.js or RequireJS
-		define('punycode', Punycode);
+		define('punycode', punycode);
 	} else {
 		// in a browser or Rhino
-		root.Punycode = Punycode;
+		root.punycode = punycode;
 	}
 
 }(this));
