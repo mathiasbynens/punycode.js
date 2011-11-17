@@ -10,7 +10,7 @@
 		(load('../vendor/qunit-clib/qunit-clib.js'), root.QUnit),
 
 	/** The `punycode` object to test */
-	punycode = root.punycode || (load('../punycode.js') || root.punycode),
+	punycode = root.punycode || load('../punycode.js') || root.punycode,
 
 	/** Data that will be used in the tests */
 	testData = {
