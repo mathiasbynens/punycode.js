@@ -26,16 +26,10 @@ Via [npm](http://npmjs.org/) (only required for Node.js releases older than v0.6
 npm install punycode
 ~~~
 
-In [Node.js](http://nodejs.org/):
+In [Narwhal](http://narwhaljs.org/), [Node.js](http://nodejs.org/), and [RingoJS](http://ringojs.org/):
 
 ~~~js
 var Punycode = require('punycode');
-~~~
-
-In [Narwhal](http://narwhaljs.org/) and [RingoJS](http://ringojs.org/):
-
-~~~js
-var Punycode = require('punycode').Punycode;
 ~~~
 
 In [Rhino](http://www.mozilla.org/rhino/):
@@ -47,9 +41,17 @@ load('punycode.js');
 In [RequireJS](http://requirejs.org/):
 
 ~~~js
-require(['path/to/punycode'], function(Punycode) {
-  console.log(Punycode);
-});
+require(
+  {
+    'paths': {
+      'punycode': 'path/to/punycode'
+    }
+  },
+  ['punycode'],
+  function(Punycode) {
+    console.log(Punycode);
+  }
+);
 ~~~
 
 Usage example:

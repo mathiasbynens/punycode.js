@@ -24,11 +24,10 @@
 					'baseUrl': '../vendor/requirejs/',
 					'urlArgs': 't=' + (+new Date),
 					'paths': {
-						'punycode': '../punycode.js/punycode',
-						'src': '../../'
+						'punycode': '../../punycode'
 					}
 				},
-				['src/punycode'], function(Punycode) {
+				['punycode'], function(Punycode) {
 					Punycode2 = Punycode;
 					require(['tests.js']);
 				});
