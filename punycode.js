@@ -4,7 +4,7 @@
  * Available under MIT license <http://mths.be/mit>
  */
 
-;(function(window) {
+;(function(root) {
 
 	/**
 	 * The `Punycode` object.
@@ -13,12 +13,11 @@
 	 */
 	var Punycode,
 
-	/** Detect free variables `define`, `exports`, and `require` */
+	/** Detect free variables `define`, `exports`, `module` and `require` */
 	freeDefine = typeof define == 'function' && typeof define.amd == 'object' &&
 		define.amd && define,
-	freeExports = typeof exports == 'object' && exports &&
-		(typeof global == 'object' && global && global == global.global &&
-		(window = global), exports),
+	freeExports = typeof exports == 'object' && exports,
+	freeModule = typeof module == 'object' && module,
 	freeRequire = typeof require == 'function' && require,
 
 	/** Highest positive signed 32-bit float value */
@@ -50,7 +49,10 @@
 	/** Convenience shortcuts */
 	baseMinusTMin = base - tMin,
 	floor = Math.floor,
-	stringFromCharCode = String.fromCharCode;
+	stringFromCharCode = String.fromCharCode,
+
+	/** Temporary variable */
+	key;
 
 	/*--------------------------------------------------------------------------*/
 
@@ -490,21 +492,21 @@
 
 	/** Expose Punycode */
 	if (freeExports) {
-		if (typeof module == 'object' && module && module.exports == freeExports) {
-			// in Node.js
-			module.exports = Punycode;
+		if (freeModule && freeModule.exports == freeExports) {
+			// in Node.js or Ringo 0.8+
+			freeModule.exports = Punycode;
 		} else {
-			// in Narwhal or Ringo
-			freeExports.Punycode = Punycode;
+			// in Narwhal or Ringo 0.7-
+			for (key in Punycode) {
+				Punycode.hasOwnProperty(key) && (freeExports[key] = Punycode[key]);
+			}
 		}
 	} else if (freeDefine) {
 		// via curl.js or RequireJS
-		freeDefine(function() {
-			return Punycode;
-		});
+		define('punycode', Punycode);
 	} else {
 		// in a browser or Rhino
-		window.Punycode = Punycode;
+		root.Punycode = Punycode;
 	}
 
 }(this));

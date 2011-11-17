@@ -1,19 +1,16 @@
-(function(window) {
+(function(root) {
 
 	/** Use a single `load` function */
-	var load = typeof require == 'function' ? require : window.load,
+	var load = typeof require == 'function' ? require : root.load,
 
 	/** The unit testing framework */
 	QUnit =
-		window.QUnit ||
-		(window.QUnit = load('../vendor/qunit/qunit/qunit.js') || window.QUnit) &&
-		(load('../vendor/qunit-clib/qunit-clib.js'), window.QUnit),
+		root.QUnit ||
+		(root.QUnit = load('../vendor/qunit/qunit/qunit.js') || root.QUnit) &&
+		(load('../vendor/qunit-clib/qunit-clib.js'), root.QUnit),
 
 	/** The `Punycode` object to test */
-	Punycode =
-		window.Punycode ||
-		(Punycode = load('../punycode.js') || window.Punycode) &&
-		(Punycode.Punycode || Punycode),
+	Punycode = root.Punycode || (load('../punycode.js') || root.Punycode),
 
 	/** Data that will be used in the tests */
 	testData = {
@@ -257,16 +254,16 @@
 		});
 	});
 
-	if (window.require) {
+	if (root.document && root.require) {
 		test('require(\'punycode\')', function() {
-			equal((Punycode2 || {}).version, Punycode2.version, 'require(\'punycode\')');
+			equal((Punycode2 || {}).version, Punycode.version, 'require(\'punycode\')');
 		});
 	}
 
 	/*--------------------------------------------------------------------------*/
 
 	// explicitly call `QUnit.start()` in a CLI environment
-	if (!window.document) {
+	if (!root.document) {
 		QUnit.start();
 	}
 
