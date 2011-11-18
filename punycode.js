@@ -100,6 +100,7 @@
 	 * Creates an array containing the decimal code points of each character in
 	 * the string.
 	 * @see `punycode.utf16.encode`
+	 * @see <http://tools.ietf.org/html/rfc2781>
 	 * @memberOf punycode.utf16
 	 * @name decode
 	 * @param {String} string The Unicode input string.
@@ -128,6 +129,7 @@
 	/**
 	 * Creates a string based on an array of decimal code points.
 	 * @see `punycode.utf16.decode`
+	 * @see <http://tools.ietf.org/html/rfc2781>
 	 * @memberOf punycode.utf16
 	 * @name encode
 	 * @param {Array} codePoints The array of decimal code points.
