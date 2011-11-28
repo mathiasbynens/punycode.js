@@ -34,7 +34,7 @@
 	delimiter = '-', // '\x2D'
 
 	/** Regular expressions */
-	regexASCII = /[^\x20-\x7e]/,
+	regexNonASCII = /[^ -~]/, // matches unprintable ASCII chars + non-ASCII chars
 	regexPunycode = /^xn--/,
 
 	/** Error messages */
@@ -460,7 +460,7 @@
 	 */
 	function toASCII(domain) {
 		return mapDomain(domain, function(string) {
-			return regexASCII.test(string)
+			return regexNonASCII.test(string)
 				? 'xn--' + encode(string)
 				: string;
 		});
