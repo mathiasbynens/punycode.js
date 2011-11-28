@@ -82,14 +82,13 @@
 				'encoded': '989aomsvi5e83db1d2a355cv1e0vak1dwrv93d5xbh15a0dt30a5jpsd879ccm6fea98c'
 			},
 			/**
-			 * According to the RFC sample strings, this string should encode to:
+			 * As there’s no way to do it in JavaScript, Punycode.js doesn’t support
+			 * mixed-case annotation (which is entirely optional as per the RFC).
+			 * So, while the RFC sample string encodes to:
 			 * `b1abfaaepdrnnbgefbaDotcwatmq2g4l`
-			 * This test fails to encode as such in every Punycode implementation
-			 * that I’ve tried. Instead, it encodes to:
+			 * Without mixed-case annotation it has to encode to:
 			 * `b1abfaaepdrnnbgefbadotcwatmq2g4l`
-			 * I suspect this to be a typo in the RFC, and have tweaked the test for
-			 * now.
-			 * http://www.rfc-editor.org/errata_search.php?rfc=3492&eid=3026
+			 * https://github.com/bestiejs/punycode.js/issues/3
 			 */
 			{
 				'description': 'Russian (Cyrillic)',
