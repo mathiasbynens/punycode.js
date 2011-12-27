@@ -144,7 +144,7 @@
 				'encoded': '-> $1.00 <--'
 			}
 		],
-		'utf16': [
+		'ucs2': [
 			{
 				'description': 'printable ASCII characters',
 				'decoded': [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126],
@@ -201,15 +201,15 @@
 
 	/*--------------------------------------------------------------------------*/
 
-	test('punycode.utf16.decode', function() {
-		each(testData.utf16, function(object) {
-			deepEqual(punycode.utf16.decode(object.encoded), object.decoded, object.description);
+	test('punycode.ucs2.decode', function() {
+		each(testData.ucs2, function(object) {
+			deepEqual(punycode.ucs2.decode(object.encoded), object.decoded, object.description);
 		});
 	});
 
-	test('punycode.utf16.encode', function() {
-		each(testData.utf16, function(object) {
-			equal(punycode.utf16.encode(object.decoded), object.encoded, object.description);
+	test('punycode.ucs2.encode', function() {
+		each(testData.ucs2, function(object) {
+			equal(punycode.ucs2.encode(object.decoded), object.encoded, object.description);
 		});
 	});
 

@@ -18,10 +18,10 @@
 
 <!-- div -->
 
-## `punycode.utf16`
-* [`punycode.utf16`](#punycode.utf16)
-* [`punycode.utf16.decode`](#punycode.utf16.decode)
-* [`punycode.utf16.encode`](#punycode.utf16.encode)
+## `punycode.ucs2`
+* [`punycode.ucs2`](#punycode.ucs2)
+* [`punycode.ucs2.decode`](#punycode.ucs2.decode)
+* [`punycode.ucs2.encode`](#punycode.ucs2.encode)
 
 <!-- /div -->
 
@@ -47,7 +47,7 @@
 
 <!-- div -->
 
-### <a id="punycode.version" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L478" title="View in source">`punycode.version`</a>
+### <a id="punycode.version" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L476" title="View in source">`punycode.version`</a>
 *(String)*: A string representing the current Punycode.js version number.
 [&#9650;][1]
 
@@ -56,7 +56,7 @@
 
 <!-- div -->
 
-### <a id="punycode.decode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L226" title="View in source">`punycode.decode(input)`</a>
+### <a id="punycode.decode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L224" title="View in source">`punycode.decode(input)`</a>
 Converts a Punycode string of ASCII code points to a string of Unicode code points.
 [&#9650;][1]
 
@@ -71,7 +71,7 @@ Converts a Punycode string of ASCII code points to a string of Unicode code poin
 
 <!-- div -->
 
-### <a id="punycode.encode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L328" title="View in source">`punycode.encode(input)`</a>
+### <a id="punycode.encode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L326" title="View in source">`punycode.encode(input)`</a>
 Converts a string of Unicode code points to a Punycode string of ASCII code points.
 [&#9650;][1]
 
@@ -86,7 +86,7 @@ Converts a string of Unicode code points to a Punycode string of ASCII code poin
 
 <!-- div -->
 
-### <a id="punycode.toASCII" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L461" title="View in source">`punycode.toASCII(domain)`</a>
+### <a id="punycode.toASCII" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L459" title="View in source">`punycode.toASCII(domain)`</a>
 Converts a Unicode string representing a domain name to Punycode. Only the non-ASCII parts of the domain name will be converted, i.e. it doesn't matter if you call it with a domain that's already in ASCII.
 [&#9650;][1]
 
@@ -101,7 +101,7 @@ Converts a Unicode string representing a domain name to Punycode. Only the non-A
 
 <!-- div -->
 
-### <a id="punycode.toUnicode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L445" title="View in source">`punycode.toUnicode(domain)`</a>
+### <a id="punycode.toUnicode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L443" title="View in source">`punycode.toUnicode(domain)`</a>
 Converts a Punycode string representing a domain name to Unicode. Only the Punycoded parts of the domain name will be converted, i.e. it doesn't matter if you call it on a string that has already been converted to Unicode.
 [&#9650;][1]
 
@@ -119,12 +119,12 @@ Converts a Punycode string representing a domain name to Unicode. Only the Punyc
 
 <!-- div -->
 
-## `punycode.utf16`
+## `punycode.ucs2`
 
 <!-- div -->
 
-### <a id="punycode.utf16" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L485" title="View in source">`punycode.utf16`</a>
-*(Object)*: An object of methods to convert from JavaScript's internal character representation to Unicode and back.
+### <a id="punycode.ucs2" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L483" title="View in source">`punycode.ucs2`</a>
+*(Object)*: An object of methods to convert from JavaScript's internal character representation *(UCS-2)* to Unicode and back.
 [&#9650;][1]
 
 <!-- /div -->
@@ -132,7 +132,7 @@ Converts a Punycode string representing a domain name to Unicode. Only the Punyc
 
 <!-- div -->
 
-### <a id="punycode.utf16.decode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L109" title="View in source">`punycode.utf16.decode(string)`</a>
+### <a id="punycode.ucs2.decode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L108" title="View in source">`punycode.ucs2.decode(string)`</a>
 Creates an array containing the decimal code points of each character in the string.
 [&#9650;][1]
 
@@ -147,7 +147,7 @@ Creates an array containing the decimal code points of each character in the str
 
 <!-- div -->
 
-### <a id="punycode.utf16.encode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L138" title="View in source">`punycode.utf16.encode(codePoints)`</a>
+### <a id="punycode.ucs2.encode" href="https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L136" title="View in source">`punycode.ucs2.encode(codePoints)`</a>
 Creates a string based on an array of decimal code points.
 [&#9650;][1]
 
