@@ -1,5 +1,10 @@
 cd "$(dirname "$0")"
-for cmd in rhino ringo narwhal node; do
+echo "Testing in Rhino..."
+rhino -opt -1 tests.js
+echo "Testing in Ringo..."
+ringo -o -1 tests.js
+NARWHAL_OPTIMIZATION=-1
+for cmd in narwhal node; do
 	echo "Testing in $cmd..."
 	$cmd tests.js
 done
