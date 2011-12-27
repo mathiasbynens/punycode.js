@@ -473,7 +473,7 @@
 		 * @memberOf punycode
 		 * @type String
 		 */
-		'version': '0.2.1',
+		'version': '0.2.2',
 		/**
 		 * An object of methods to convert from JavaScript's internal character
 		 * representation (UCS-2) to Unicode and back.
