@@ -34,7 +34,7 @@
 	delimiter = '-', // '\x2D'
 
 	/** Regular expressions */
-	regexNonASCII = /[^ -~]/, // matches unprintable ASCII chars + non-ASCII chars
+	regexNonASCII = /[^ -~]/, // unprintable ASCII chars + non-ASCII chars
 	regexPunycode = /^xn--/,
 
 	/** Error messages */
@@ -97,13 +97,17 @@
 	}
 
 	/**
-	 * Creates an array containing the decimal code points of each character in
-	 * the string.
+	 * Creates an array containing the decimal code points of each Unicode
+	 * character in the string. While JavaScript uses UCS-2 internally,
+	 * this function will convert a pair of surrogate halves (each of which
+	 * UCS-2 exposes as separate characters) into a single code point,
+	 * matching UTF-16.
 	 * @see `punycode.ucs2.encode`
+	 * @see <http://mathiasbynens.be/notes/javascript-encoding>
 	 * @memberOf punycode.ucs2
 	 * @name decode
-	 * @param {String} string The Unicode input string.
-	 * @returns {Array} The new array.
+	 * @param {String} string The Unicode input string (UCS-2).
+	 * @returns {Array} The new array of code points.
 	 */
 	function ucs2decode(string) {
 		var output = [],
@@ -131,7 +135,7 @@
 	 * @memberOf punycode.ucs2
 	 * @name encode
 	 * @param {Array} codePoints The array of decimal code points.
-	 * @returns {String} The new string.
+	 * @returns {String} The new Unicode string (UCS-2).
 	 */
 	function ucs2encode(array) {
 		return map(array, function(value) {
@@ -476,7 +480,8 @@
 		'version': '0.3.0',
 		/**
 		 * An object of methods to convert from JavaScript's internal character
-		 * representation (UCS-2) to Unicode and back.
+		 * representation (UCS-2) to decimal Unicode code points, and back.
+		 * @see <http://mathiasbynens.be/notes/javascript-encoding>
 		 * @memberOf punycode
 		 * @type Object
 		 */
