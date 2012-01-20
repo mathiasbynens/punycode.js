@@ -477,7 +477,7 @@
 		 * @memberOf punycode
 		 * @type String
 		 */
-		'version': '0.3.0',
+		'version': '1.0.0',
 		/**
 		 * An object of methods to convert from JavaScript's internal character
 		 * representation (UCS-2) to decimal Unicode code points, and back.
