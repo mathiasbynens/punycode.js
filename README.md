@@ -38,7 +38,7 @@ In [Rhino](http://www.mozilla.org/rhino/):
 load('punycode.js');
 ~~~
 
-In [RequireJS](http://requirejs.org/):
+Using an AMD loader like [RequireJS](http://requirejs.org/):
 
 ~~~js
 require(
