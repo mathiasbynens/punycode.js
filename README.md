@@ -101,3 +101,7 @@ Feel free to fork if you see possible improvements!
 
 * [John-David Dalton](http://allyoucanleet.com/)
   [![twitter/jdalton](http://gravatar.com/avatar/299a3d891ff1920b69c364d061007043?s=70)](http://twitter.com/jdalton "Follow @jdalton on Twitter")
+
+## License
+
+Punycode.js is dual licensed under the [MIT](http://mths.be/mit) and [GPL](http://mths.be/gpl) licenses.
