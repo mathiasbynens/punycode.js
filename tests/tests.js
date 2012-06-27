@@ -326,9 +326,19 @@
 				'encoded': '\ud800'
 			},
 			{
+				'description': 'U+D800 (high surrogate) followed by non-surrogates',
+				'decoded': [55296, 97, 98],
+				'encoded': '\ud800ab'
+			},
+			{
 				'description': 'U+DC00 (low surrogate)',
 				'decoded': [56320],
 				'encoded': '\udc00'
+			},
+			{
+				'description': 'U+DC00 (low surrogate) followed by non-surrogates',
+				'decoded': [56320, 97, 98],
+				'encoded': '\udc00ab'
 			},
 			{
 				'description': 'U+1D306 (supplementary symbol)',

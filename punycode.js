@@ -110,13 +110,17 @@
 		    extra;
 		while (counter < length) {
 			value = string.charCodeAt(counter++);
-			if ((value & 0xF800) == 0xD800) {
+			if ((value & 0xF800) == 0xD800 && counter < length) {
+				// high surrogate, and there is a next character
 				extra = string.charCodeAt(counter++);
-				if (extra >= 0xDC00 && extra <= 0xDFFF) {
-					value = ((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000;
+				if ((extra & 0xFC00) == 0xDC00) { // low surrogate
+					output.push(((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000);
+				} else {
+					output.push(value, extra);
 				}
+			} else {
+				output.push(value);
 			}
-			output.push(value);
 		}
 		return output;
 	}
