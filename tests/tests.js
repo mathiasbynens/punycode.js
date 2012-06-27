@@ -314,6 +314,36 @@
 				'description': 'Unicode character category [Zs]: separator, space',
 				'decoded': [32, 160, 5760, 6158, 8192, 8193, 8194, 8195, 8196, 8197, 8198, 8199, 8200, 8201, 8202, 8239, 8287, 12288],
 				'encoded': ' \xa0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000'
+			},
+			{
+				'description': 'U+10000 (supplementary symbol)',
+				'decoded': [65536],
+				'encoded': '\ud800\udc00'
+			},
+			{
+				'description': 'U+D800 (high surrogate)',
+				'decoded': [55296],
+				'encoded': '\ud800'
+			},
+			{
+				'description': 'U+DC00 (low surrogate)',
+				'decoded': [56320],
+				'encoded': '\udc00'
+			},
+			{
+				'description': 'U+1D306 (supplementary symbol)',
+				'decoded': [119558],
+				'encoded': '\ud834\udf06'
+			},
+			{
+				'description': 'U+D834 (high surrogate)',
+				'decoded': [55348],
+				'encoded': '\ud834'
+			},
+			{
+				'description': 'U+DF06 (low surrogate)',
+				'decoded': [57094],
+				'encoded': '\udf06'
 			}
 		],
 		'domains': [
