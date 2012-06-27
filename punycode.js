@@ -35,8 +35,6 @@
 	/** Error messages */
 	errors = {
 		'overflow': 'Overflow: input needs wider integers to process.',
-		'ucs2decode': 'UCS-2(decode): illegal sequence',
-		'ucs2encode': 'UCS-2(encode): illegal value',
 		'not-basic': 'Illegal input >= 0x80 (not a basic code point)',
 		'invalid-input': 'Invalid input'
 	},
@@ -114,10 +112,9 @@
 			value = string.charCodeAt(counter++);
 			if ((value & 0xF800) == 0xD800) {
 				extra = string.charCodeAt(counter++);
-				if ((value & 0xFC00) != 0xD800 || (extra & 0xFC00) != 0xDC00) {
-					error('ucs2decode');
+				if (extra >= 0xDC00 && extra <= 0xDFFF) {
+					value = ((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000;
 				}
-				value = ((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000;
 			}
 			output.push(value);
 		}
@@ -135,9 +132,6 @@
 	function ucs2encode(array) {
 		return map(array, function(value) {
 			var output = '';
-			if ((value & 0xF800) == 0xD800) {
-				error('ucs2encode');
-			}
 			if (value > 0xFFFF) {
 				value -= 0x10000;
 				output += stringFromCharCode(value >>> 10 & 0x3FF | 0xD800);
