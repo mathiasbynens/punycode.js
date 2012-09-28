@@ -29,12 +29,13 @@
 	delimiter = '-', // '\x2D'
 
 	/** Regular expressions */
-	regexNonASCII = /[^ -~]/, // unprintable ASCII chars + non-ASCII chars
 	regexPunycode = /^xn--/,
+	regexNonASCII = /[^ -~]/, // unprintable ASCII chars + non-ASCII chars
+	regexSeparators = /\x2E|\u3002|\uFF0E|\uFF61/g, // RFC 3490 separators
 
 	/** Error messages */
 	errors = {
-		'overflow': 'Overflow: input needs wider integers to process.',
+		'overflow': 'Overflow: input needs wider integers to process',
 		'not-basic': 'Illegal input >= 0x80 (not a basic code point)',
 		'invalid-input': 'Invalid input'
 	},
@@ -85,8 +86,7 @@
 	 * function.
 	 */
 	function mapDomain(string, fn) {
-		var glue = '.';
-		return map(string.split(glue), fn).join(glue);
+		return map(string.split(regexSeparators), fn).join('.');
 	}
 
 	/**
