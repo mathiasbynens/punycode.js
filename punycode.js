@@ -1,4 +1,4 @@
-/*! http://mths.be/punycode by @mathias */
+/*! http://mths.be/punycode v1.2.0 by @mathias */
 ;(function(root) {
 
 	/**
@@ -470,7 +470,7 @@
 		 * @memberOf punycode
 		 * @type String
 		 */
-		'version': '1.1.1',
+		'version': '1.2.0',
 		/**
 		 * An object of methods to convert from JavaScript's internal character
 		 * representation (UCS-2) to decimal Unicode code points, and back.
