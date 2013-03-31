@@ -71,6 +71,6 @@ module.exports = function(grunt) {
 		'shell:test-browser'
 	]);
 
-	grunt.registerTask('default', ['test', 'cover']);
+	grunt.registerTask('default', ['test', 'cover', 'uglify']);
 
 };
