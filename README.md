@@ -57,7 +57,6 @@ require(
 Usage example:
 
 ~~~js
-
 // encode/decode domain names
 punycode.toASCII('mañana.com'); // 'xn--maana-pta.com'
 punycode.toUnicode('xn--maana-pta.com'); // 'mañana.com'
@@ -73,24 +72,15 @@ punycode.decode('--dqo34k'); // '☃-⌘'
 
 [Full API documentation is available.](https://github.com/bestiejs/punycode.js/tree/master/docs#readme)
 
-## Cloning this repo
-
-To clone this repository including all submodules, using Git 1.6.5 or later:
-
-~~~ bash
-git clone --recursive https://github.com/bestiejs/punycode.js.git
-cd punycode.js
-~~~
-
-For older Git versions, just use:
-
-~~~ bash
-git clone https://github.com/bestiejs/punycode.js.git
-cd punycode.js
-git submodule update --init
-~~~
-
 Feel free to fork if you see possible improvements!
+
+## Unit tests & code coverage
+
+After cloning this repository, run `npm install --dev` to install the dependencies needed for Punycode.js development and testing. You may want to install Istanbul _globally_ using `npm install istanbul -g`.
+
+Once that’s done, you can run the unit tests in Node using `npm test` or `node tests/tests.js`. To run the tests in Rhino, Ringo, Narwhal, and web browsers as well, use `grunt test`.
+
+To generate the code coverage report, use `grunt cover`.
 
 ## Authors
 
