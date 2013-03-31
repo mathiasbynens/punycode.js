@@ -198,20 +198,6 @@
 	}
 
 	/**
-	 * Converts a basic code point to lowercase if `flag` is falsy, or to
-	 * uppercase if `flag` is truthy. The code point is unchanged if it's
-	 * caseless. The behavior is undefined if `codePoint` is not a basic code
-	 * point.
-	 * @private
-	 * @param {Number} codePoint The numeric value of a basic code point.
-	 * @returns {Number} The resulting basic code point.
-	 */
-	function encodeBasic(codePoint, flag) {
-		codePoint -= (codePoint - 97 < 26) << 5;
-		return codePoint + (!flag && codePoint - 65 < 26) << 5;
-	}
-
-	/**
 	 * Converts a Punycode string of ASCII code points to a string of Unicode
 	 * code points.
 	 * @memberOf punycode
