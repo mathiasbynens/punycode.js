@@ -1,19 +1,21 @@
 /*! http://mths.be/punycode v1.2.0 by @mathias */
 ;(function(root) {
 
+	/** Detect free variables */
+	var freeExports = typeof exports == 'object' && exports;
+	var freeModule = typeof module == 'object' && module &&
+		module.exports == freeExports && module;
+	var freeGlobal = typeof global == 'object' && global;
+	if (freeGlobal.global === freeGlobal || freeGlobal.window === freeGlobal) {
+		root = freeGlobal;
+	}
+
 	/**
 	 * The `punycode` object.
 	 * @name punycode
 	 * @type Object
 	 */
 	var punycode,
-
-	/** Detect free variables `define`, `exports`, `module` and `require` */
-	freeDefine = typeof define == 'function' && typeof define.amd == 'object' &&
-		define.amd && define,
-	freeExports = typeof exports == 'object' && exports,
-	freeModule = typeof module == 'object' && module,
-	freeRequire = typeof require == 'function' && require,
 
 	/** Highest positive signed 32-bit float value */
 	maxInt = 2147483647, // aka. 0x7FFFFFFF or 2^31-1
@@ -475,21 +477,25 @@
 	};
 
 	/** Expose `punycode` */
-	if (freeExports) {
-		if (freeModule && freeModule.exports == freeExports) {
-			// in Node.js or Ringo 0.8+
+	// Some AMD build optimizers, like r.js, check for specific condition patterns
+	// like the following:
+	if (
+		typeof define == 'function' &&
+		typeof define.amd == 'object' &&
+		define.amd
+	) {
+		define(function() {
+			return punycode;
+		});
+	}	else if (freeExports && !freeExports.nodeType) {
+		if (freeModule) { // in Node.js or RingoJS v0.8.0+
 			freeModule.exports = punycode;
-		} else {
-			// in Narwhal or Ringo 0.7-
+		} else { // in Narwhal or RingoJS v0.7.0-
 			for (key in punycode) {
 				punycode.hasOwnProperty(key) && (freeExports[key] = punycode[key]);
 			}
 		}
-	} else if (freeDefine) {
-		// via curl.js or RequireJS
-		define('punycode', punycode);
-	} else {
-		// in a browser or Rhino
+	} else { // in Rhino or a web browser
 		root.punycode = punycode;
 	}
 
