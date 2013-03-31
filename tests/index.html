@@ -3,31 +3,33 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Punycode.js test suite</title>
-		<link rel="stylesheet" href="../vendor/qunit/qunit/qunit.css">
+		<link rel="stylesheet" href="../node_modules/qunitjs/qunit/qunit.css">
 	</head>
 	<body>
 		<div id="qunit"></div>
-		<script src="../vendor/qunit/qunit/qunit.js"></script>
+		<script src="../node_modules/qunitjs/qunit/qunit.js"></script>
 		<script src="../punycode.js"></script>
-		<script src="../vendor/requirejs/require.js"></script>
 		<script>
-			var punycode2;
-			if (/[?&]norequire=true(?:&|$)/.test(location.search)) {
-				require = define = null;
-				document.write('<script src="tests.js"><\/script>');
-			} else {
-				require({
-					'baseUrl': '../vendor/requirejs/',
-					'urlArgs': 't=' + (+new Date),
-					'paths': {
-						'punycode': '../../punycode'
-					}
-				},
-				['punycode'], function(punycode) {
-					punycode2 = punycode;
-					require(['tests.js']);
-				});
-			}
+			// populate `QUnit.urlParams`
+			QUnit.urlParams.norequire = /[?&]norequire=true(?:&|$)/.test(location.search);
+
+			// load tests.js if not using require.js
+			document.write(QUnit.urlParams.norequire
+				? '<script src="tests.js"><\/script>'
+				: '<script src="../node_modules/requirejs/require.js"><\/script>'
+			);
+		</script>
+		<script>
+			window.require && require({
+				'baseUrl': '../node_modules/requirejs/',
+				'urlArgs': 't=' + (+new Date),
+				'paths': {
+					'punycode': '../../punycode'
+				}
+			},
+			['punycode'], function(punycode) {
+				require(['tests.js']);
+			});
 		</script>
 	</body>
 </html>

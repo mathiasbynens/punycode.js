@@ -1,19 +1,30 @@
 (function(root) {
+	'use strict';
 
-	/** Use a single `load` function */
-	var load = typeof require == 'function' ? require : root.load,
+	/** Use a single "load" function */
+	var load = typeof require == 'function' ? require : root.load;
 
 	/** The unit testing framework */
-	QUnit =
-		root.QUnit ||
-		(root.QUnit = load('../vendor/qunit/qunit/qunit.js') || root.QUnit) &&
-		(load('../vendor/qunit-clib/qunit-clib.js'), root.QUnit),
+	var QUnit = (function() {
+		var noop = Function.prototype;
+		return root.QUnit || (
+			root.addEventListener || (root.addEventListener = noop),
+			root.setTimeout || (root.setTimeout = noop),
+			root.QUnit = load('../node_modules/qunitjs/qunit/qunit.js') || root.QUnit,
+			(load('../node_modules/qunit-clib/qunit-clib.js') || { 'runInContext': noop }).runInContext(root),
+			addEventListener === noop && delete root.addEventListener,
+			root.QUnit
+		);
+	}());
 
-	/** The `punycode` object to test */
-	punycode = root.punycode || load('../punycode.js') || root.punycode,
+	/** The `punycode` function to test */
+	var punycode = root.punycode || (root.punycode = (
+		punycode = load('../punycode.js') || root.punycode,
+		punycode = punycode.punycode || punycode
+	));
 
 	/** Data that will be used in the tests */
-	testData = {
+	var testData = {
 		'strings': [
 			{
 				'description': 'a single basic code point',
@@ -477,12 +488,6 @@
 			equal(punycode.toASCII(object.decoded), object.encoded, message);
 		});
 	});
-
-	if (root.document && root.require) {
-		test('require(\'punycode\')', function() {
-			equal((punycode2 || {}).version, punycode.version, 'require(\'punycode\')');
-		});
-	}
 
 	/*--------------------------------------------------------------------------*/
 
