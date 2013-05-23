@@ -1,4 +1,4 @@
-# Punycode.js
+# Punycode.js [![Build status](https://travis-ci.org/bestiejs/punycode.js.png?branch=master)](https://travis-ci.org/bestiejs/punycode.js) [![Dependency status](https://gemnasium.com/bestiejs/punycode.js.png)](https://gemnasium.com/bestiejs/punycode.js)
 
 A robust Punycode converter that fully complies to [RFC 3492](http://tools.ietf.org/html/rfc3492) and [RFC 5891](http://tools.ietf.org/html/rfc5891), and works on nearly all JavaScript platforms.
 
