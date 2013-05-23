@@ -1,7 +1,7 @@
 (function(root) {
 	'use strict';
 
-	/** Use a single "load" function */
+	/** Use a single `load` function */
 	var load = typeof require == 'function' ? require : root.load;
 
 	/** The unit testing framework */
