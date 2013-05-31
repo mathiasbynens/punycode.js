@@ -8,6 +8,8 @@
 		"punycode",
 		"unicode",
 		"idn",
+		"idna",
+		"dns",
 		"url",
 		"domain"
 	],
@@ -64,6 +66,5 @@
 		"qunitjs": "~1.11.0",
 		"qunit-clib": "~1.3.0",
 		"requirejs": "~2.1.5"
-	},
-	"readmeFilename": "README.md"
+	}
 }
