@@ -92,7 +92,7 @@
 	}
 
 	/**
-	 * Creates an array containing the decimal code points of each Unicode
+	 * Creates an array containing the numeric code points of each Unicode
 	 * character in the string. While JavaScript uses UCS-2 internally,
 	 * this function will convert a pair of surrogate halves (each of which
 	 * UCS-2 exposes as separate characters) into a single code point,
@@ -128,11 +128,11 @@
 	}
 
 	/**
-	 * Creates a string based on an array of decimal code points.
+	 * Creates a string based on an array of numeric code points.
 	 * @see `punycode.ucs2.decode`
 	 * @memberOf punycode.ucs2
 	 * @name encode
-	 * @param {Array} codePoints The array of decimal code points.
+	 * @param {Array} codePoints The array of numeric code points.
 	 * @returns {String} The new Unicode string (UCS-2).
 	 */
 	function ucs2encode(array) {
@@ -152,19 +152,22 @@
 	 * Converts a basic code point into a digit/integer.
 	 * @see `digitToBasic()`
 	 * @private
-	 * @param {Number} codePoint The basic (decimal) code point.
+	 * @param {Number} codePoint The basic numeric code point value.
 	 * @returns {Number} The numeric value of a basic code point (for use in
 	 * representing integers) in the range `0` to `base - 1`, or `base` if
 	 * the code point does not represent a value.
 	 */
 	function basicToDigit(codePoint) {
-		return codePoint - 48 < 10
-			? codePoint - 22
-			: codePoint - 65 < 26
-				? codePoint - 65
-				: codePoint - 97 < 26
-					? codePoint - 97
-					: base;
+		if (codePoint - 48 < 10) {
+			return codePoint - 22;
+		}
+		if (codePoint - 65 < 26) {
+			return codePoint - 65;
+		}
+		if (codePoint - 97 < 26) {
+			return codePoint - 97;
+		}
+		return base;
 	}
 
 	/**
@@ -176,7 +179,7 @@
 	 * representing integers) is `digit`, which needs to be in the range
 	 * `0` to `base - 1`. If `flag` is non-zero, the uppercase form is
 	 * used; else, the lowercase form is used. The behavior is undefined
-	 * if flag is non-zero and `digit` has no uppercase form.
+	 * if `flag` is non-zero and `digit` has no uppercase form.
 	 */
 	function digitToBasic(digit, flag) {
 		//  0..25 map to ASCII a..z or A..Z
@@ -200,11 +203,11 @@
 	}
 
 	/**
-	 * Converts a Punycode string of ASCII code points to a string of Unicode
-	 * code points.
+	 * Converts a Punycode string of ASCII-only symbols to a string of Unicode
+	 * symbols.
 	 * @memberOf punycode
-	 * @param {String} input The Punycode string of ASCII code points.
-	 * @returns {String} The resulting string of Unicode code points.
+	 * @param {String} input The Punycode string of ASCII-only symbols.
+	 * @returns {String} The resulting string of Unicode symbols.
 	 */
 	function decode(input) {
 		// Don't use UCS-2
@@ -302,11 +305,11 @@
 	}
 
 	/**
-	 * Converts a string of Unicode code points to a Punycode string of ASCII
-	 * code points.
+	 * Converts a string of Unicode symbols to a Punycode string of ASCII-only
+	 * symbols.
 	 * @memberOf punycode
-	 * @param {String} input The string of Unicode code points.
-	 * @returns {String} The resulting Punycode string of ASCII code points.
+	 * @param {String} input The string of Unicode symbols.
+	 * @returns {String} The resulting Punycode string of ASCII-only symbols.
 	 */
 	function encode(input) {
 		var n,
@@ -461,7 +464,7 @@
 		'version': '1.2.1',
 		/**
 		 * An object of methods to convert from JavaScript's internal character
-		 * representation (UCS-2) to decimal Unicode code points, and back.
+		 * representation (UCS-2) to Unicode code points, and back.
 		 * @see <http://mathiasbynens.be/notes/javascript-encoding>
 		 * @memberOf punycode
 		 * @type Object

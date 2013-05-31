@@ -51,7 +51,7 @@
 <!-- div -->
 
 ### <a id="punycodeversion"></a>`punycode.version`
-<a href="#punycodeversion">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L461 "View in source") [&#x24C9;][1]
+<a href="#punycodeversion">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L464 "View in source") [&#x24C9;][1]
 
 *(String)*: A string representing the current Punycode.js version number.
 
@@ -63,16 +63,15 @@
 <!-- div -->
 
 ### <a id="punycodedecodeinput"></a>`punycode.decode(input)`
-<a href="#punycodedecodeinput">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L209 "View in source") [&#x24C9;][1]
+<a href="#punycodedecodeinput">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L212 "View in source") [&#x24C9;][1]
 
-Converts a Punycode string of ASCII code points to a string of Unicode
-code points.
+Converts a Punycode string of ASCII-only symbols to a string of Unicode symbols.
 
 #### Arguments
-1. `input` *(String)*: The Punycode string of ASCII code points.
+1. `input` *(String)*: The Punycode string of ASCII-only symbols.
 
 #### Returns
-*(String)*: The resulting string of Unicode code points.
+*(String)*: The resulting string of Unicode symbols.
 
 * * *
 
@@ -82,16 +81,15 @@ code points.
 <!-- div -->
 
 ### <a id="punycodeencodeinput"></a>`punycode.encode(input)`
-<a href="#punycodeencodeinput">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L311 "View in source") [&#x24C9;][1]
+<a href="#punycodeencodeinput">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L314 "View in source") [&#x24C9;][1]
 
-Converts a string of Unicode code points to a Punycode string of ASCII
-code points.
+Converts a string of Unicode symbols to a Punycode string of ASCII-only symbols.
 
 #### Arguments
-1. `input` *(String)*: The string of Unicode code points.
+1. `input` *(String)*: The string of Unicode symbols.
 
 #### Returns
-*(String)*: The resulting Punycode string of ASCII code points.
+*(String)*: The resulting Punycode string of ASCII-only symbols.
 
 * * *
 
@@ -101,11 +99,9 @@ code points.
 <!-- div -->
 
 ### <a id="punycodetoasciidomain"></a>`punycode.toASCII(domain)`
-<a href="#punycodetoasciidomain">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L444 "View in source") [&#x24C9;][1]
+<a href="#punycodetoasciidomain">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L447 "View in source") [&#x24C9;][1]
 
-Converts a Unicode string representing a domain name to Punycode. Only the
-non-ASCII parts of the domain name will be converted, i.e. it doesn't
-matter if you call it with a domain that's already in ASCII.
+Converts a Unicode string representing a domain name to Punycode. Only the non-ASCII parts of the domain name will be converted, i.e. it doesn't matter if you call it with a domain that's already in ASCII.
 
 #### Arguments
 1. `domain` *(String)*: The domain name to convert, as a Unicode string.
@@ -121,12 +117,9 @@ matter if you call it with a domain that's already in ASCII.
 <!-- div -->
 
 ### <a id="punycodetounicodedomain"></a>`punycode.toUnicode(domain)`
-<a href="#punycodetounicodedomain">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L428 "View in source") [&#x24C9;][1]
+<a href="#punycodetounicodedomain">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L431 "View in source") [&#x24C9;][1]
 
-Converts a Punycode string representing a domain name to Unicode. Only the
-Punycoded parts of the domain name will be converted, i.e. it doesn't
-matter if you call it on a string that has already been converted to
-Unicode.
+Converts a Punycode string representing a domain name to Unicode. Only the Punycoded parts of the domain name will be converted, i.e. it doesn't matter if you call it on a string that has already been converted to Unicode.
 
 #### Arguments
 1. `domain` *(String)*: The Punycode domain name to convert to Unicode.
@@ -149,10 +142,10 @@ Unicode.
 <!-- div -->
 
 ### <a id="punycodeucs2"></a>`punycode.ucs2`
-<a href="#punycodeucs2">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L469 "View in source") [&#x24C9;][1]
+<a href="#punycodeucs2">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L472 "View in source") [&#x24C9;][1]
 
 *(Object)*: An object of methods to convert from JavaScript's internal character
-representation *(UCS-2)* to decimal Unicode code points, and back.
+		 * representation *(UCS-2)* to Unicode code points, and back.
 
 * * *
 
@@ -164,11 +157,7 @@ representation *(UCS-2)* to decimal Unicode code points, and back.
 ### <a id="punycodeucs2decodestring"></a>`punycode.ucs2.decode(string)`
 <a href="#punycodeucs2decodestring">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L107 "View in source") [&#x24C9;][1]
 
-Creates an array containing the decimal code points of each Unicode
-character in the string. While JavaScript uses UCS-2 internally,
-this function will convert a pair of surrogate halves *(each of which
-UCS-2 exposes as separate characters)* into a single code point,
-matching UTF-16.
+Creates an array containing the numeric code points of each Unicode character in the string. While JavaScript uses UCS-2 internally, this function will convert a pair of surrogate halves *(each of which UCS-2 exposes as separate characters)* into a single code point, matching UTF-16.
 
 #### Arguments
 1. `string` *(String)*: The Unicode input string *(UCS-2)*.
@@ -186,10 +175,10 @@ matching UTF-16.
 ### <a id="punycodeucs2encodecodepoints"></a>`punycode.ucs2.encode(codePoints)`
 <a href="#punycodeucs2encodecodepoints">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L138 "View in source") [&#x24C9;][1]
 
-Creates a string based on an array of decimal code points.
+Creates a string based on an array of numeric code points.
 
 #### Arguments
-1. `codePoints` *(Array)*: The array of decimal code points.
+1. `codePoints` *(Array)*: The array of numeric code points.
 
 #### Returns
 *(String)*: The new Unicode string *(UCS-2)*.
