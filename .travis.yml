@@ -3,6 +3,9 @@ node_js:
   - "0.10"
   - "0.8"
 env:
-  - TEST_COMMAND="node tests/tests.js --extended"
+  - TEST_COMMAND="grunt shell:test-node-extended"
+  - TEST_COMMAND="grunt shell:test-phantomjs"
+before_script:
+  - "npm install -g grunt-cli"
 script:
   $TEST_COMMAND
