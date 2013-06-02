@@ -17,7 +17,7 @@
 		);
 	}());
 
-	/** The `punycode` function to test */
+	/** The `punycode` object to test */
 	var punycode = root.punycode || (root.punycode = (
 		punycode = load('../punycode.js') || root.punycode,
 		punycode = punycode.punycode || punycode
@@ -332,8 +332,10 @@
 
 	/*--------------------------------------------------------------------------*/
 
-	// explicitly call `QUnit.start()` in a CLI environment
-	if (!root.document) {
+	// configure QUnit and call `QUnit.start()` for
+	// Narwhal, Node.js, PhantomJS, Rhino, and RingoJS
+	if (!root.document || root.phantom) {
+		QUnit.config.noglobals = true;
 		QUnit.start();
 	}
 

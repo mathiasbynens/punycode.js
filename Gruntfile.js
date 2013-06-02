@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-esmangle');
+	//grunt.loadNpmTasks('grunt-esmangle');
 
 	grunt.registerTask('cover', 'shell:cover');
 	grunt.registerTask('test', [
