@@ -129,7 +129,7 @@ After cloning this repository, run `npm install --dev` to install the dependenci
 
 Once that’s done, you can run the unit tests in Node using `npm test` or `node tests/tests.js`. To run the tests in Rhino, Ringo, Narwhal, PhantomJS, and web browsers as well, use `grunt test`.
 
-To generate the code coverage report, use `grunt cover`.
+To generate [the code coverage report](http://rawgithub.com/bestiejs/punycode.js/master/coverage/punycode.js/punycode.js.html), use `grunt cover`.
 
 Feel free to fork if you see possible improvements!
 
