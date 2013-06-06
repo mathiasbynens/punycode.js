@@ -22,13 +22,13 @@
 	$markdown = docdown(array(
 		'path' => '../' . $file,
 		'url'  => 'https://github.com/bestiejs/punycode.js/blob/master/punycode.js'
-	));
+	)) . PHP_EOL;
 
 	// save to a .md file
 	file_put_contents($output . '.md', $markdown);
 
 	// print
 	header('Content-Type: text/plain;charset=utf-8');
-	echo $markdown . PHP_EOL;
+	echo $markdown;
 
 ?>

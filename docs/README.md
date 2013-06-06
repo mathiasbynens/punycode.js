@@ -144,8 +144,7 @@ Converts a Punycode string representing a domain name to Unicode. Only the Punyc
 ### <a id="punycodeucs2"></a>`punycode.ucs2`
 <a href="#punycodeucs2">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L472 "View in source") [&#x24C9;][1]
 
-*(Object)*: An object of methods to convert from JavaScript's internal character
-		 * representation *(UCS-2)* to Unicode code points, and back.
+*(Object)*: An object of methods to convert from JavaScript's internal character representation *(UCS-2)* to Unicode code points, and back.
 
 * * *
 
