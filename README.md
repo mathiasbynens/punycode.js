@@ -14,33 +14,45 @@ This project is [bundled](https://github.com/joyent/node/blob/master/lib/punycod
 
 ## Installation
 
-In a browser:
-
-~~~html
-<script src="punycode.js"></script>
-~~~
-
 Via [npm](http://npmjs.org/) (only required for Node.js releases older than v0.6.2):
 
-~~~bash
+```bash
 npm install punycode
-~~~
+```
+
+Via [Bower](http://bower.io/):
+
+```bash
+bower install punycode
+```
+
+Via [Component](https://github.com/component/component):
+
+```bash
+component install bestiejs/punycode.js
+```
+
+In a browser:
+
+```html
+<script src="punycode.js"></script>
+```
 
 In [Narwhal](http://narwhaljs.org/), [Node.js](http://nodejs.org/), and [RingoJS](http://ringojs.org/):
 
-~~~js
+```js
 var punycode = require('punycode');
-~~~
+```
 
 In [Rhino](http://www.mozilla.org/rhino/):
 
-~~~js
+```js
 load('punycode.js');
-~~~
+```
 
 Using an AMD loader like [RequireJS](http://requirejs.org/):
 
-~~~js
+```js
 require(
   {
     'paths': {
@@ -52,7 +64,7 @@ require(
     console.log(punycode);
   }
 );
-~~~
+```
 
 ## API
 
