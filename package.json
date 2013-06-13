@@ -26,18 +26,18 @@
 	"author": {
 		"name": "Mathias Bynens",
 		"email": "mathias@qiwi.be",
-		"web": "http://mathiasbynens.be/"
+		"url": "http://mathiasbynens.be/"
 	},
 	"maintainers": [
 		{
 			"name": "Mathias Bynens",
 			"email": "mathias@qiwi.be",
-			"web": "http://mathiasbynens.be/"
+			"url": "http://mathiasbynens.be/"
 		},
 		{
 			"name": "John-David Dalton",
-			"email": "john@fusejs.com",
-			"web": "http://allyoucanleet.com/"
+			"email": "john.david.dalton@gmail.com",
+			"url": "http://allyoucanleet.com/"
 		}
 	],
 	"bugs": {
