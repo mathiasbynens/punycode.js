@@ -57,9 +57,6 @@ module.exports = function(grunt) {
 			'test-node': {
 				'command': 'echo "Testing in Node..."; node "tests/tests.js"'
 			},
-			'test-node-extended': {
-				'command': 'echo "Testing in Node..."; node "tests/tests.js" --extended'
-			},
 			'test-browser': {
 				'command': 'echo "Testing in a browser..."; open "tests/index.html"'
 			}
@@ -71,12 +68,15 @@ module.exports = function(grunt) {
 	//grunt.loadNpmTasks('grunt-esmangle');
 
 	grunt.registerTask('cover', 'shell:cover');
-	grunt.registerTask('test', [
+	grunt.registerTask('travis', [
 		'shell:test-narwhal',
 		'shell:test-phantomjs',
 		'shell:test-rhino',
 		'shell:test-ringo',
-		'shell:test-node-extended',
+		'shell:test-node',
+	]);
+	grunt.registerTask('test', [
+		'travis',
 		'shell:test-browser'
 	]);
 

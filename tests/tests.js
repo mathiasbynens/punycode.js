@@ -23,10 +23,10 @@
 		punycode = punycode.punycode || punycode
 	));
 
-	// Quick and dirty test to see if we ran `node tests.js --extended` or not
+	// Quick and dirty test to see if we’re in Node or PhantomJS
 	var runExtendedTests = (function() {
 		try {
-			return process.argv[0] == 'node' && process.argv[2] == '--extended';
+			return process.argv[0] == 'node' || root.phantom;
 		} catch(error) { }
 	}());
 
