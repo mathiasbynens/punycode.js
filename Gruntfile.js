@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 	//grunt.loadNpmTasks('grunt-esmangle');
 
 	grunt.registerTask('cover', 'shell:cover');
-	grunt.registerTask('travis', [
+	grunt.registerTask('ci', [
 		'shell:test-narwhal',
 		'shell:test-phantomjs',
 		'shell:test-rhino',
@@ -76,10 +76,14 @@ module.exports = function(grunt) {
 		'shell:test-node',
 	]);
 	grunt.registerTask('test', [
-		'travis',
+		'ci',
 		'shell:test-browser'
 	]);
 
-	grunt.registerTask('default', ['shell:test-node', 'cover', 'uglify']);
+	grunt.registerTask('default', [
+		'shell:test-node',
+		'cover',
+		'uglify'
+	]);
 
 };
