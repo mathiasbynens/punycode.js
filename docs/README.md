@@ -51,7 +51,7 @@
 <!-- div -->
 
 ### <a id="punycodeversion"></a>`punycode.version`
-<a href="#punycodeversion">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L467 "View in source") [&#x24C9;][1]
+<a href="#punycodeversion">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L466 "View in source") [&#x24C9;][1]
 
 *(String)*: A string representing the current Punycode.js version number.
 
@@ -81,7 +81,7 @@ Converts a Punycode string of ASCII-only symbols to a string of Unicode symbols.
 <!-- div -->
 
 ### <a id="punycodeencodeinput"></a>`punycode.encode(input)`
-<a href="#punycodeencodeinput">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L317 "View in source") [&#x24C9;][1]
+<a href="#punycodeencodeinput">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L316 "View in source") [&#x24C9;][1]
 
 Converts a string of Unicode symbols to a Punycode string of ASCII-only symbols.
 
@@ -99,7 +99,7 @@ Converts a string of Unicode symbols to a Punycode string of ASCII-only symbols.
 <!-- div -->
 
 ### <a id="punycodetoasciidomain"></a>`punycode.toASCII(domain)`
-<a href="#punycodetoasciidomain">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L450 "View in source") [&#x24C9;][1]
+<a href="#punycodetoasciidomain">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L449 "View in source") [&#x24C9;][1]
 
 Converts a Unicode string representing a domain name to Punycode. Only the non-ASCII parts of the domain name will be converted, i.e. it doesn't matter if you call it with a domain that's already in ASCII.
 
@@ -117,7 +117,7 @@ Converts a Unicode string representing a domain name to Punycode. Only the non-A
 <!-- div -->
 
 ### <a id="punycodetounicodedomain"></a>`punycode.toUnicode(domain)`
-<a href="#punycodetounicodedomain">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L434 "View in source") [&#x24C9;][1]
+<a href="#punycodetounicodedomain">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L433 "View in source") [&#x24C9;][1]
 
 Converts a Punycode string representing a domain name to Unicode. Only the Punycoded parts of the domain name will be converted, i.e. it doesn't matter if you call it on a string that has already been converted to Unicode.
 
@@ -142,7 +142,7 @@ Converts a Punycode string representing a domain name to Unicode. Only the Punyc
 <!-- div -->
 
 ### <a id="punycodeucs2"></a>`punycode.ucs2`
-<a href="#punycodeucs2">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L475 "View in source") [&#x24C9;][1]
+<a href="#punycodeucs2">#</a> [&#x24C8;](https://github.com/bestiejs/punycode.js/blob/master/punycode.js#L474 "View in source") [&#x24C9;][1]
 
 *(Object)*: An object of methods to convert from JavaScript's internal character representation *(UCS-2)* to Unicode code points, and back.
 
