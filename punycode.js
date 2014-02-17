@@ -59,14 +59,14 @@
 	 * @returns {Error} Throws a `RangeError` with the applicable error message.
 	 */
 	function error(type) {
-		throw RangeError(errors[type]);
+		throw new RangeError(errors[type]);
 	}
 
 	/**
 	 * A generic `Array#map` utility function.
 	 * @private
 	 * @param {Array} array The array to iterate over.
-	 * @param {Function} callback The function that gets called for every array
+	 * @param {Function} fn The callback function that gets called for every array
 	 * item.
 	 * @returns {Array} A new array of values returned by the callback function.
 	 */
@@ -81,10 +81,10 @@
 	/**
 	 * A simple `Array#map`-like wrapper to work with domain name strings.
 	 * @private
-	 * @param {String} domain The domain name.
-	 * @param {Function} callback The function that gets called for every
+	 * @param {String} string The domain name.
+	 * @param {Function} fn The callback function that gets called for every
 	 * character.
-	 * @returns {Array} A new string of characters returned by the callback
+	 * @returns {String} A new string of characters returned by the callback
 	 * function.
 	 */
 	function mapDomain(string, fn) {
@@ -135,7 +135,7 @@
 	 * @see `punycode.ucs2.decode`
 	 * @memberOf punycode.ucs2
 	 * @name encode
-	 * @param {Array} codePoints The array of numeric code points.
+	 * @param {Array} array The array of numeric code points.
 	 * @returns {String} The new Unicode string (UCS-2).
 	 */
 	function ucs2encode(array) {
@@ -178,6 +178,7 @@
 	 * @see `basicToDigit()`
 	 * @private
 	 * @param {Number} digit The numeric value of a basic code point.
+	 * @param {Number} flag The letter case flag.
 	 * @returns {Number} The basic code point whose value (when used for
 	 * representing integers) is `digit`, which needs to be in the range
 	 * `0` to `base - 1`. If `flag` is non-zero, the uppercase form is
@@ -187,7 +188,7 @@
 	function digitToBasic(digit, flag) {
 		//  0..25 map to ASCII a..z or A..Z
 		// 26..35 map to ASCII 0..9
-		return digit + 22 + 75 * (digit < 26) - ((flag != 0) << 5);
+		return digit + 22 + 75 * (digit < 26) - ((flag !== 0) << 5);
 	}
 
 	/**
