@@ -1,4 +1,4 @@
-# Punycode.js [![Build status](https://travis-ci.org/bestiejs/punycode.js.png?branch=master)](https://travis-ci.org/bestiejs/punycode.js) [![Dependency status](https://gemnasium.com/bestiejs/punycode.js.png)](https://gemnasium.com/bestiejs/punycode.js)
+# Punycode.js [![Build status](https://travis-ci.org/bestiejs/punycode.js.svg?branch=master)](https://travis-ci.org/bestiejs/punycode.js) [![Dependency status](https://gemnasium.com/bestiejs/punycode.js.svg)](https://gemnasium.com/bestiejs/punycode.js)
 
 A robust Punycode converter that fully complies to [RFC 3492](http://tools.ietf.org/html/rfc3492) and [RFC 5891](http://tools.ietf.org/html/rfc5891), and works on nearly all JavaScript platforms.
 
@@ -147,16 +147,16 @@ Feel free to fork if you see possible improvements!
 
 ## Author
 
-| [![twitter/mathias](http://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](http://twitter.com/mathias "Follow @mathias on Twitter") |
+| [![twitter/mathias](https://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](https://twitter.com/mathias "Follow @mathias on Twitter") |
 |---|
 | [Mathias Bynens](http://mathiasbynens.be/) |
 
 ## Contributors
 
-| [![twitter/jdalton](http://gravatar.com/avatar/299a3d891ff1920b69c364d061007043?s=70)](http://twitter.com/jdalton "Follow @jdalton on Twitter") |
+| [![twitter/jdalton](https://gravatar.com/avatar/299a3d891ff1920b69c364d061007043?s=70)](https://twitter.com/jdalton "Follow @jdalton on Twitter") |
 |---|
 | [John-David Dalton](http://allyoucanleet.com/) |
 
 ## License
 
-Punycode.js is dual licensed under the [MIT](http://mths.be/mit) and [GPL](http://mths.be/gpl) licenses.
+Punycode.js is available under the [MIT](http://mths.be/mit) license.
