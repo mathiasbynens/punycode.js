@@ -17,10 +17,6 @@
 		{
 			"type": "MIT",
 			"url": "http://mths.be/mit"
-		},
-		{
-			"type": "GPL",
-			"url": "http://mths.be/gpl"
 		}
 	],
 	"author": {
