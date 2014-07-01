@@ -1,21 +1,26 @@
 (function(root) {
 	'use strict';
 
-	/** Use a single `load` function */
-	var load = typeof require == 'function' ? require : root.load;
+	var noop = Function.prototype;
 
-	/** The unit testing framework */
+	var load = (typeof require == 'function' && !(root.define && define.amd)) ?
+		require :
+		(!root.document && root.java && root.load) || noop;
+
 	var QUnit = (function() {
-		var noop = Function.prototype;
 		return root.QUnit || (
 			root.addEventListener || (root.addEventListener = noop),
 			root.setTimeout || (root.setTimeout = noop),
 			root.QUnit = load('../node_modules/qunitjs/qunit/qunit.js') || root.QUnit,
-			(load('../node_modules/qunit-clib/qunit-clib.js') || { 'runInContext': noop }).runInContext(root),
 			addEventListener === noop && delete root.addEventListener,
 			root.QUnit
 		);
 	}());
+
+	var qe = load('../node_modules/qunit-extras/qunit-extras.js');
+	if (qe) {
+		qe.runInContext(root);
+	}
 
 	/** The `punycode` object to test */
 	var punycode = root.punycode || (root.punycode = (
@@ -27,7 +32,7 @@
 	var runExtendedTests = (function() {
 		try {
 			return process.argv[0] == 'node' || root.phantom;
-		} catch(error) { }
+		} catch(exception) { }
 	}());
 
 	/** Data that will be used in the tests */
