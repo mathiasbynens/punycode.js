@@ -1,4 +1,4 @@
-/*! http://mths.be/punycode v1.2.4 by @mathias */
+/*! http://mths.be/punycode v1.3.0 by @mathias */
 ;(function(root) {
 
 	/** Detect free variables */
@@ -479,7 +479,7 @@
 		 * @memberOf punycode
 		 * @type String
 		 */
-		'version': '1.2.4',
+		'version': '1.3.0',
 		/**
 		 * An object of methods to convert from JavaScript's internal character
 		 * representation (UCS-2) to Unicode code points, and back.

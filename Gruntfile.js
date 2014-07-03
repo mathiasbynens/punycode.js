@@ -84,8 +84,8 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('default', [
-		'shell:test-node',
-		'uglify'
+		'uglify',
+		'shell:test-node'
 	]);
 
 };
