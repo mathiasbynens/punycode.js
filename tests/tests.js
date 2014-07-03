@@ -29,7 +29,7 @@
 	));
 
 	// Quick and dirty test to see if we’re in Node or PhantomJS
-	var runExtendedTests = (function() {
+	var runExtendedTests = false && (function() {
 		try {
 			return process.argv[0] == 'node' || root.phantom;
 		} catch(exception) { }
@@ -273,8 +273,12 @@
 
 	/*--------------------------------------------------------------------------*/
 
+	// Explicitly call `QUnit.module()` instead of `module()` in case we are in
+	// a CLI environment.
+	QUnit.module('punycode');
+
 	test('punycode.ucs2.decode', function() {
-		// test all Unicode code points separately
+		// Test all Unicode code points separately.
 		runExtendedTests && each(allSymbols, function(string, codePoint) {
 			deepEqual(punycode.ucs2.decode(string), [codePoint], 'Decoding symbol with code point ' + codePoint);
 		});
@@ -305,6 +309,10 @@
 		each(testData.ucs2, function(object) {
 			equal(punycode.ucs2.encode(object.decoded), object.encoded, object.description);
 		});
+		var codePoints = [0x61, 0x62, 0x63];
+		var result = punycode.ucs2.encode(codePoints);
+		equal(result, 'abc');
+		deepEqual(codePoints, [0x61, 0x62, 0x63], 'Do not mutate argument array');
 	});
 
 	test('punycode.decode', function() {
