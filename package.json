@@ -21,34 +21,30 @@
 	],
 	"author": {
 		"name": "Mathias Bynens",
-		"email": "mathias@qiwi.be",
 		"url": "http://mathiasbynens.be/"
 	},
 	"contributors": [
 		{
 			"name": "Mathias Bynens",
-			"email": "mathias@qiwi.be",
 			"url": "http://mathiasbynens.be/"
 		},
 		{
 			"name": "John-David Dalton",
-			"email": "john.david.dalton@gmail.com",
 			"url": "http://allyoucanleet.com/"
 		}
 	],
-	"bugs": {
-		"url": "https://github.com/bestiejs/punycode.js/issues"
-	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/bestiejs/punycode.js.git"
 	},
-	"engines": [
-		"node",
-		"rhino"
+	"bugs": {
+		"url": "https://github.com/bestiejs/punycode.js/issues"
+	},
+	"files": [
+		"LICENSE-MIT.txt",
+		"punycode.js"
 	],
 	"directories": {
-		"doc": "docs",
 		"test": "tests"
 	},
 	"scripts": {
