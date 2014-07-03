@@ -29,7 +29,7 @@
 	));
 
 	// Quick and dirty test to see if we’re in Node or PhantomJS
-	var runExtendedTests = false && (function() {
+	var runExtendedTests = (function() {
 		try {
 			return process.argv[0] == 'node' || root.phantom;
 		} catch(exception) { }

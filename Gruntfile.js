@@ -31,8 +31,11 @@ module.exports = function(grunt) {
 				'stderr': true,
 				'failOnError': true
 			},
-			'cover': {
+			'cover-html': {
 				'command': 'istanbul cover --report "html" --verbose --dir "coverage" "tests/tests.js"'
+			},
+			'cover-coveralls': {
+				'command': 'istanbul cover --verbose --dir "coverage" "tests/tests.js" && cat coverage/lcov.info | coveralls; rm -rf coverage/lcov*'
 			},
 			'test-narwhal': {
 				'command': 'echo "Testing in Narwhal..."; export NARWHAL_OPTIMIZATION=-1; narwhal "tests/tests.js"'
@@ -67,13 +70,13 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	//grunt.loadNpmTasks('grunt-esmangle');
 
-	grunt.registerTask('cover', 'shell:cover');
+	grunt.registerTask('cover', 'shell:cover-html');
 	grunt.registerTask('ci', [
 		'shell:test-narwhal',
 		'shell:test-phantomjs',
 		'shell:test-rhino',
 		'shell:test-ringo',
-		'shell:test-node',
+		'shell:test-node'
 	]);
 	grunt.registerTask('test', [
 		'ci',
