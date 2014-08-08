@@ -95,12 +95,17 @@
 	 * function.
 	 */
 	function mapDomain(string, fn) {
+		var parts = string.split('@');
+		var result = '';
+		if (parts.length > 1) {
+			// In email addresses, only the domain name should be punycoded. Leave
+			// the local part (i.e. everything up to `@`) intact.
+			result = parts[0] + '@';
+			string = parts[1];
+		}
 		var labels = string.split(regexSeparators);
-		// Note: each label could still contain `@` in the case of an email address.
-		return map(labels, function(label) {
-			var parts = label.split('@');
-			return map(parts, fn).join('@');
-		}).join('.');
+		var encoded = map(labels, fn).join('.');
+		return result + encoded;
 	}
 
 	/**

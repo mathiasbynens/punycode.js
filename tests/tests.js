@@ -236,7 +236,7 @@
 			{
 				'description': 'Email address',
 				'decoded': '\u0434\u0436\u0443\u043C\u043B\u0430@\u0434\u0436p\u0443\u043C\u043B\u0430\u0442\u0435\u0441\u0442.b\u0440\u0444a',
-				'encoded': 'xn--80ahgue5b@xn--p-8sbkgc5ag7bhce.xn--ba-lmcq'
+				'encoded': '\u0434\u0436\u0443\u043C\u043B\u0430@xn--p-8sbkgc5ag7bhce.xn--ba-lmcq'
 			}
 		],
 		'separators': [
