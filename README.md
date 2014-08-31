@@ -173,4 +173,4 @@ Feel free to fork if you see possible improvements!
 
 ## License
 
-Punycode.js is available under the [MIT](http://mths.be/mit) license.
+Punycode.js is available under the [MIT](https://mths.be/mit) license.
