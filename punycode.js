@@ -103,7 +103,9 @@
 			result = parts[0] + '@';
 			string = parts[1];
 		}
-		var labels = string.split(regexSeparators);
+		// Avoid `split(regex)` for IE8 compatibility. See #17.
+		string = string.replace(regexSeparators, '\x2E');
+		var labels = string.split('.');
 		var encoded = map(labels, fn).join('.');
 		return result + encoded;
 	}

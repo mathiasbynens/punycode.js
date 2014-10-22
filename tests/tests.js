@@ -32,7 +32,7 @@
 	var runExtendedTests = (function() {
 		try {
 			return process.argv[0] == 'node' || root.phantom;
-		} catch(exception) { }
+		} catch (exception) { }
 	}());
 
 	/** Data that will be used in the tests */
@@ -211,6 +211,10 @@
 			{
 				'decoded': 'ma\xF1ana.com',
 				'encoded': 'xn--maana-pta.com'
+			},
+			{ // https://github.com/bestiejs/punycode.js/issues/17
+				'decoded': 'example.com.',
+				'encoded': 'example.com.'
 			},
 			{
 				'decoded': 'b\xFCcher.com',
