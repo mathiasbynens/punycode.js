@@ -64,7 +64,7 @@
 				'decoded': 'Willst du die Bl\xFCthe des fr\xFChen, die Fr\xFCchte des sp\xE4teren Jahres',
 				'encoded': 'Willst du die Blthe des frhen, die Frchte des spteren Jahres-x9e96lkal'
 			},
-			// http://tools.ietf.org/html/rfc3492#section-7.1
+			// https://tools.ietf.org/html/rfc3492#section-7.1
 			{
 				'description': 'Arabic (Egyptian)',
 				'decoded': '\u0644\u064A\u0647\u0645\u0627\u0628\u062A\u0643\u0644\u0645\u0648\u0634\u0639\u0631\u0628\u064A\u061F',
