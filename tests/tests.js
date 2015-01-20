@@ -375,9 +375,10 @@
 	/*--------------------------------------------------------------------------*/
 
 	// configure QUnit and call `QUnit.start()` for
-	// Narwhal, Node.js, PhantomJS, Rhino, and RingoJS
+	// Narwhal, Node.js, io.js, PhantomJS, Rhino, and RingoJS
 	if (!root.document || root.phantom) {
 		QUnit.config.noglobals = true;
+		QUnit.config.hidepassed = true;
 		QUnit.start();
 	}
 
