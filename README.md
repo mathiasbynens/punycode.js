@@ -14,7 +14,7 @@ This project is [bundled](https://github.com/joyent/node/blob/master/lib/punycod
 
 ## Installation
 
-Via [npm](https://www.npmjs.org/) (only required for Node.js releases older than v0.6.2):
+Via [npm](https://www.npmjs.com/) (only required for Node.js releases older than v0.6.2):
 
 ```bash
 npm install punycode
