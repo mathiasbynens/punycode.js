@@ -525,6 +525,9 @@
 				punycode.hasOwnProperty(key) && (freeExports[key] = punycode[key]);
 			}
 		}
+	} else if (freeExports) {
+		// Firefox extension CommonJS module
+		freeExports = punycode;
 	} else {
 		// in Rhino or a web browser
 		root.punycode = punycode;
