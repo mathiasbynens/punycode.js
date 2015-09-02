@@ -2,11 +2,11 @@
 ;(function(root) {
 
 	/** Detect free variables */
-	var freeExports = typeof exports == 'object' && exports &&
+	var freeExports = typeof exports === 'object' && exports &&
 		!exports.nodeType && exports;
-	var freeModule = typeof module == 'object' && module &&
+	var freeModule = typeof module === 'object' && module &&
 		!module.nodeType && module;
-	var freeGlobal = typeof global == 'object' && global;
+	var freeGlobal = typeof global === 'object' && global;
 	if (
 		freeGlobal.global === freeGlobal ||
 		freeGlobal.window === freeGlobal ||
@@ -508,15 +508,15 @@
 	// Some AMD build optimizers, like r.js, check for specific condition patterns
 	// like the following:
 	if (
-		typeof define == 'function' &&
-		typeof define.amd == 'object' &&
+		typeof define === 'function' &&
+		typeof define.amd === 'object' &&
 		define.amd
 	) {
 		define('punycode', function() {
 			return punycode;
 		});
 	} else if (freeExports && freeModule) {
-		if (module.exports == freeExports) {
+		if (module.exports === freeExports) {
 			// in Node.js, io.js, or RingoJS v0.8.0+
 			freeModule.exports = punycode;
 		} else {
