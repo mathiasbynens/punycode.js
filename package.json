@@ -49,5 +49,12 @@
 		"qunit-extras": "^1.4.1",
 		"qunitjs": "~1.11.0",
 		"requirejs": "^2.1.15"
+	},
+	"jspm": {
+		"map": {
+			"./punycode.js": {
+				"node": "@node/punycode"
+			}
+		}
 	}
 }
