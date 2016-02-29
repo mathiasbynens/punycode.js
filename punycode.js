@@ -507,15 +507,20 @@
 	/** Expose `punycode` */
 	// Some AMD build optimizers, like r.js, check for specific condition patterns
 	// like the following:
-	if (
+	var useAmd = (
 		typeof define == 'function' &&
 		typeof define.amd == 'object' &&
 		define.amd
-	) {
+	);
+	var useExports = freeExports && freeModule;
+
+	if (useAmd) {
 		define('punycode', function() {
 			return punycode;
 		});
-	} else if (freeExports && freeModule) {
+	}
+
+	if (useExports) {
 		if (module.exports == freeExports) {
 			// in Node.js, io.js, or RingoJS v0.8.0+
 			freeModule.exports = punycode;
@@ -525,9 +530,10 @@
 				punycode.hasOwnProperty(key) && (freeExports[key] = punycode[key]);
 			}
 		}
-	} else {
+	}
+	
+	if (!useAmd && !useExports) {
 		// in Rhino or a web browser
 		root.punycode = punycode;
 	}
-
 }(this));
