@@ -1,4 +1,4 @@
-# Punycode.js [![Build status](https://travis-ci.org/bestiejs/punycode.js.svg?branch=master)](https://travis-ci.org/bestiejs/punycode.js) [![Code coverage status](http://img.shields.io/codecov/c/github/bestiejs/punycode.js.svg)](https://coveralls.io/r/bestiejs/punycode.js) [![Dependency status](https://gemnasium.com/bestiejs/punycode.js.svg)](https://gemnasium.com/bestiejs/punycode.js)
+# Punycode.js [![Build status](https://travis-ci.org/bestiejs/punycode.js.svg?branch=master)](https://travis-ci.org/bestiejs/punycode.js) [![Code coverage status](http://img.shields.io/codecov/c/github/bestiejs/punycode.js.svg)](https://codecov.io/gh/bestiejs/punycode.js) [![Dependency status](https://gemnasium.com/bestiejs/punycode.js.svg)](https://gemnasium.com/bestiejs/punycode.js)
 
 Punycode.js is a robust Punycode converter that fully complies to [RFC 3492](https://tools.ietf.org/html/rfc3492) and [RFC 5891](https://tools.ietf.org/html/rfc5891).
 
@@ -12,18 +12,14 @@ This JavaScript library is the result of comparing, optimizing and documenting d
 
 This project is [bundled](https://github.com/joyent/node/blob/master/lib/punycode.js) with [Node.js v0.6.2+](https://github.com/joyent/node/compare/975f1930b1...61e796decc) and [io.js v1.0.0+](https://github.com/iojs/io.js/blob/v1.x/lib/punycode.js).
 
+The current version supports recent versions of Node.js only. For the old version that offers the same functionality with broader support, including Rhino, Ringo, Narwhal, and web browsers, see [v1.4.1](https://github.com/bestiejs/punycode.js/releases/tag/v1.4.1).
+
 ## Installation
 
 Via [npm](https://www.npmjs.com/) (only required for Node.js releases older than v0.6.2):
 
 ```bash
 npm install punycode
-```
-
-In a browser:
-
-```html
-<script src="punycode.js"></script>
 ```
 
 In [Node.js](https://nodejs.org/):
