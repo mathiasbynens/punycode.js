@@ -419,7 +419,7 @@ const punycode = {
 	 * @memberOf punycode
 	 * @type String
 	 */
-	'version': '1.4.1',
+	'version': '2.0.0',
 	/**
 	 * An object of methods to convert from JavaScript's internal character
 	 * representation (UCS-2) to Unicode code points, and back.
