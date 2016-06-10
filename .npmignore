@@ -1,8 +1,0 @@
-.*
-*.md
-coverage
-docs
-tests
-bower.json
-component.json
-Gruntfile.js
