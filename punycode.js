@@ -437,4 +437,9 @@ const punycode = {
 	'toUnicode': toUnicode
 };
 
-module.exports = punycode;
+/* Register with node.js when available */
+if (typeof module !== 'undefined')
+{
+	module.exports = punycode;
+}
+
