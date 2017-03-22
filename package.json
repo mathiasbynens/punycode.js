@@ -5,6 +5,7 @@
   "homepage": "https://mths.be/punycode",
   "main": "punycode.js",
   "jsnext:main": "punycode.es6.js",
+  "module": "punycode.es6.js",
   "engines": {
     "node": ">=6"
   },
