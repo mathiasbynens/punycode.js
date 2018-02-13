@@ -70,6 +70,7 @@ function map(array, fn) {
  * function.
  */
 function mapDomain(string, fn) {
+	string = String(string || '');
 	const parts = string.split('@');
 	let result = '';
 	if (parts.length > 1) {
