@@ -1,0 +1,6 @@
+{
+  "presets": ["env"],
+  "plugins": [
+    ["transform-es2015-spread", { "loose": true }],
+  ]
+}
