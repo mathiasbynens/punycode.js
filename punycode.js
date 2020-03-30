@@ -28,6 +28,7 @@ const errors = {
 /** Convenience shortcuts */
 const baseMinusTMin = base - tMin;
 const floor = Math.floor;
+
 const stringFromCharCode = String.fromCharCode;
 
 /*--------------------------------------------------------------------------*/
@@ -113,7 +114,7 @@ function ucs2decode(string) {
 				// It's an unmatched surrogate; only append this code unit, in case the
 				// next code unit is the high surrogate of a surrogate pair.
 				output.push(value);
-				counter--;
+				counter = counter-1;
 			}
 		} else {
 			output.push(value);
