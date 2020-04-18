@@ -191,6 +191,14 @@ const testData = {
 			'encoded': 'xn--caf-dma.com'
 		},
 		{
+			'decoded': 'ÜBER.COM',
+			'encoded': 'xn--BER-ska.COM'
+		},
+		{
+			'decoded': 'sPhÈRè.com',
+			'encoded': 'xn--sPhR-nka7q.com'
+		},
+		{
 			'decoded': '\u2603-\u2318.com',
 			'encoded': 'xn----dqo34k.com'
 		},
