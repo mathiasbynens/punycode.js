@@ -44,7 +44,7 @@
     "prepublish": "node scripts/prepublish.js"
   },
   "devDependencies": {
-    "codecov": "^1.0.1",
+    "codecov": "^3.7.1",
     "istanbul": "^0.4.1",
     "mocha": "^2.5.3"
   },
