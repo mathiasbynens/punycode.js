@@ -12,7 +12,7 @@ This JavaScript library is the result of comparing, optimizing and documenting d
 
 This project was [bundled](https://github.com/joyent/node/blob/master/lib/punycode.js) with Node.js from [v0.6.2+](https://github.com/joyent/node/compare/975f1930b1...61e796decc) until [v7](https://github.com/nodejs/node/pull/7941) (soft-deprecated).
 
-The current version supports recent versions of Node.js only. It provides a CommonJS module and an ES6 module. For the old version that offers the same functionality with broader support, including Rhino, Ringo, Narwhal, and web browsers, see [v1.4.1](https://github.com/bestiejs/punycode.js/releases/tag/v1.4.1).
+This project provides a CommonJS module that uses ES6 features and an ES6 module, which work in modern Node versions and browsers. For the old version that offers the same functionality in a UMD build with support for older pre-ES6 runtimes, including Rhino, Ringo, and Narwhal, see [v1.4.1](https://github.com/bestiejs/punycode.js/releases/tag/v1.4.1).
 
 ## Installation
 
