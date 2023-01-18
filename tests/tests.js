@@ -78,7 +78,7 @@ const testData = {
 		 * `b1abfaaepdrnnbgefbaDotcwatmq2g4l`
 		 * Without mixed-case annotation it has to encode to:
 		 * `b1abfaaepdrnnbgefbadotcwatmq2g4l`
-		 * https://github.com/bestiejs/punycode.js/issues/3
+		 * https://github.com/mathiasbynens/punycode.js/issues/3
 		 */
 		{
 			'description': 'Russian (Cyrillic)',
@@ -178,7 +178,7 @@ const testData = {
 			'decoded': 'ma\xF1ana.com',
 			'encoded': 'xn--maana-pta.com'
 		},
-		{ // https://github.com/bestiejs/punycode.js/issues/17
+		{ // https://github.com/mathiasbynens/punycode.js/issues/17
 			'decoded': 'example.com.',
 			'encoded': 'example.com.'
 		},

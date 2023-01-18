@@ -31,9 +31,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bestiejs/punycode.js.git"
+    "url": "https://github.com/mathiasbynens/punycode.js.git"
   },
-  "bugs": "https://github.com/bestiejs/punycode.js/issues",
+  "bugs": "https://github.com/mathiasbynens/punycode.js/issues",
   "files": [
     "LICENSE-MIT.txt",
     "punycode.js",
