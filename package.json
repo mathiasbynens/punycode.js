@@ -46,7 +46,7 @@
   "devDependencies": {
     "codecov": "^1.0.1",
     "istanbul": "^0.4.1",
-    "mocha": "^6.2.2"
+    "mocha": "^10.2.0"
   },
   "jspm": {
     "map": {
