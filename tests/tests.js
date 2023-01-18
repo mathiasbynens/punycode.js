@@ -216,6 +216,11 @@ const testData = {
 		{ // https://github.com/mathiasbynens/punycode.js/pull/115
 			'decoded': 'foo\x7F.example',
 			'encoded': 'foo\x7F.example'
+		},
+		{
+			"description": "Email address that includes multiple at signs",
+			"decoded": "\"very.(),:;<>[]\\\".VERY.\\\"@very@\\ \\\"very\\\".unusual\"@\uD83D\uDCA9.la",
+			"encoded": "\"very.(),:;<>[]\\\".VERY.\\\"@very@\\ \\\"very\\\".unusual\"@xn--ls8h.la"
 		}
 	],
 	'separators': [
