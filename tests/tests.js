@@ -295,6 +295,14 @@ describe('punycode.decode', function() {
 	it('handles uppercase Z', function() {
 		assert.deepEqual(punycode.decode('ZZZ'), '\u7BA5');
 	});
+	it('throws RangeError: Invalid input', function() {
+		assert.throws(
+			function() {
+				punycode.decode('ls8h=');
+			},
+			RangeError
+		);
+	});
 });
 
 describe('punycode.encode', function() {
