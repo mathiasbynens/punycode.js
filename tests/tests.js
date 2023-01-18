@@ -212,6 +212,10 @@ const testData = {
 			'description': 'Email address',
 			'decoded': '\u0434\u0436\u0443\u043C\u043B\u0430@\u0434\u0436p\u0443\u043C\u043B\u0430\u0442\u0435\u0441\u0442.b\u0440\u0444a',
 			'encoded': '\u0434\u0436\u0443\u043C\u043B\u0430@xn--p-8sbkgc5ag7bhce.xn--ba-lmcq'
+		},
+		{ // https://github.com/mathiasbynens/punycode.js/pull/115
+			'decoded': 'foo\x7F.example',
+			'encoded': 'foo\x7F.example'
 		}
 	],
 	'separators': [
@@ -294,6 +298,14 @@ describe('punycode.decode', function() {
 	}
 	it('handles uppercase Z', function() {
 		assert.deepEqual(punycode.decode('ZZZ'), '\u7BA5');
+	});
+	it('throws RangeError: Invalid input', function() {
+		assert.throws(
+			function() {
+				punycode.decode('ls8h=');
+			},
+			RangeError
+		);
 	});
 });
 
