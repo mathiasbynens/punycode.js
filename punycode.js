@@ -236,7 +236,7 @@ const decode = function(input) {
 			}
 
 			const digit = basicToDigit(input.charCodeAt(index++));
-      
+
 			if (digit >= base) {
 				error('invalid-input');
 			}
