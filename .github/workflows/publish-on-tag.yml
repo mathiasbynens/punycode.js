@@ -25,6 +25,7 @@ jobs:
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN_PUNYCODE}}
         run: |
+          sed -i 's/"name": "punycode"/"name": "punycode.js"/' package.json
           npm config set registry 'https://wombat-dressing-room.appspot.com/'
           npm config set '//wombat-dressing-room.appspot.com/:_authToken' '${NPM_TOKEN}'
           npm publish
