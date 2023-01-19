@@ -115,6 +115,28 @@ punycode.ucs2.encode([0x1D306]);
 
 A string representing the current Punycode.js version number.
 
+## For maintainers
+
+### How to publish a new release
+
+1. On the `main` branch, bump the version number in `package.json`:
+
+    ```sh
+    npm version patch -m 'Release v%s'
+    ```
+
+    Instead of `patch`, use `minor` or `major` [as needed](https://semver.org/).
+
+    Note that this produces a Git commit + tag.
+
+1. Push the release commit and tag:
+
+    ```sh
+    git push && git push --tags
+    ```
+
+    Our CI then automatically publishes the new release to npm, under both the [`punycode`](https://www.npmjs.com/package/punycode) and [`punycode.js`](https://www.npmjs.com/package/punycode.js) names.
+
 ## Author
 
 | [![twitter/mathias](https://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](https://twitter.com/mathias "Follow @mathias on Twitter") |
