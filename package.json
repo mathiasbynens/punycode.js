@@ -40,13 +40,8 @@
     "punycode.es6.js"
   ],
   "scripts": {
-    "test": "mocha tests",
+    "test": "npx mocha tests",
     "build": "node scripts/prepublish.js"
-  },
-  "devDependencies": {
-    "codecov": "^3.8.3",
-    "nyc": "^15.1.0",
-    "mocha": "^10.2.0"
   },
   "jspm": {
     "map": {
