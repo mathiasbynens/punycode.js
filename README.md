@@ -19,10 +19,16 @@ This project provides a CommonJS module that uses ES2015+ features and JavaScrip
 Via [npm](https://www.npmjs.com/):
 
 ```bash
-npm install punycode --save
+npm install punycode.js --save
 ```
 
 In [Node.js](https://nodejs.org/):
+
+```js
+const punycode = require('punycode.js');
+```
+
+### Legacy / Deprecated Usage
 
 > ⚠️ Note that userland modules don't hide core modules.
 > For example, `require('punycode')` still imports the deprecated core module even if you executed `npm install punycode`.
