@@ -10,17 +10,34 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    needs: [ get-lts ]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+        node:
+          - ${{ fromJson(needs.get-lts.outputs.active) }}
+          - 21
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
+          node-version: ${{ matrix.node }}
       - name: Install dependencies
         run: npm install
       - name: Build
         run: npm run build
       - name: Test
         run: npm test
+
+  get-lts:
+    runs-on: ubuntu-latest
+    steps:
+      - id: get
+        uses: msimerson/node-lts-versions@v1
+    outputs:
+      lts: ${{ steps.get.outputs.lts }}
+      active: ${{ steps.get.outputs.active }}
