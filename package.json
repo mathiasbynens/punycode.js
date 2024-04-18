@@ -40,7 +40,7 @@
     "punycode.es6.js"
   ],
   "scripts": {
-    "test": "mocha tests",
+    "test": "npx mocha tests",
     "build": "node scripts/prepublish.js"
   },
   "devDependencies": {

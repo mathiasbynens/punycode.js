@@ -3,6 +3,7 @@ punycode.es6.js
 
 # Coverage report
 coverage
+.nyc_output
 
 # Installed npm modules
 node_modules

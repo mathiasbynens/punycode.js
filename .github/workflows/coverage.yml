@@ -1,0 +1,28 @@
+name: coverage
+
+on:
+  push:
+    paths-ignore:
+      - '*.md'
+  pull_request:
+
+env:
+  CI: true
+  NODE_ENV: cov
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - run: npm install
+      - name: run coverage
+        run: npx -y nyc npm test
+        #run: npx -y c8 --reporter=lcov npm test
+      - name: codecov
+        uses: codecov/codecov-action@v3
+      # - name: Coveralls
+      #   uses: coverallsapp/github-action@master
+      #   with:
+      #     github-token: ${{ secrets.github_token }}
