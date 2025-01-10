@@ -15,3 +15,4 @@ if (!regex.test(sourceContents)) {
 const outputContents = sourceContents.replace(regex, output);
 
 fs.writeFileSync(path.resolve(__dirname, '../punycode.es6.js'), outputContents);
+fs.writeFileSync(path.resolve(__dirname, '../punycode.mjs'), outputContents);
