@@ -6,6 +6,7 @@
   "main": "punycode.js",
   "jsnext:main": "punycode.es6.js",
   "module": "punycode.es6.js",
+  "types": "punycode.d.ts",
   "engines": {
     "node": ">=6"
   },
@@ -37,7 +38,8 @@
   "files": [
     "LICENSE-MIT.txt",
     "punycode.js",
-    "punycode.es6.js"
+    "punycode.es6.js",
+    "punycode.d.ts"
   ],
   "scripts": {
     "test": "mocha tests",
@@ -46,7 +48,8 @@
   "devDependencies": {
     "codecov": "^3.8.3",
     "nyc": "^15.1.0",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "typescript": "^5.9.2"
   },
   "jspm": {
     "map": {
