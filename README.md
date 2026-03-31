@@ -32,10 +32,10 @@ const punycode = require('punycode.js');
 
 > ⚠️ Note that userland modules don't hide core modules.
 > For example, `require('punycode')` still imports the deprecated core module even if you executed `npm install punycode`.
-> Use `require('punycode/')` to import userland modules rather than core modules.
+> Use `require('punycode.js')` to import userland modules rather than core modules.
 
 ```js
-const punycode = require('punycode/');
+const punycode = require('punycode.js');
 ```
 
 ## API
